@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Réservez une visite pour votre propriété – ImmoPremier">
+  <title>Réservation de visite | ImmoPremier</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+       <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+      <span>ImmoPremier</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="produits.html">Propriétés</a></li>
+      <li id="nav-auth"><a href="connexion.html" class="nav-cta">Se connecter</a></li>
+      <li><a href="favoris.html" style="position:relative;">
+  Favoris ❤️
+  <span id="fav-count" style="
+    position:absolute; top:-6px; right:-6px;
+    background:var(--accent); color:#fff;
+    width:16px; height:16px; border-radius:50%;
+    font-size:0.65rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  ">0</span>
+</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <header class="page-header">
+    <div class="page-header-content">
+      <div class="breadcrumb">
+        <a href="../index.html">🏠 Accueil</a>
+        <span>›</span>
+        <a href="produits.html">Propriétés</a>
+        <span>›</span>
+        <span>Réservation</span>
+      </div>
+      <h1>Réserver une Visite</h1>
+      <p>Remplissez le formulaire ci-dessous pour planifier votre visite</p>
+    </div>
+  </header>
+  <section class="commande-section">
+    <div class="commande-grid">
+      <div id="commande-form-wrapper">
+        <form class="commande-form-card" id="commande-form" onsubmit="handleCommande(event)" novalidate>
+          <div class="form-section-title">
+            <span>1</span> Vos coordonnées
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cmd-prenom">Prénom *</label>
+              <input type="text" id="cmd-prenom" name="prenom"
+                placeholder="Votre prénom" required
+                data-validate="prenom">
+              <div class="error-msg"></div>
+            </div>
+            <div class="form-group">
+              <label for="cmd-nom">Nom *</label>
+              <input type="text" id="cmd-nom" name="nom"
+                placeholder="Votre nom" required
+                data-validate="nom">
+              <div class="error-msg"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cmd-email">Email *</label>
+              <input type="email" id="cmd-email" name="email"
+                placeholder="votre@email.com" required
+                data-validate="email">
+              <div class="error-msg"></div>
+            </div>
+            <div class="form-group">
+              <label for="cmd-tel">Téléphone *</label>
+              <input type="tel" id="cmd-tel" name="tel"
+                placeholder="0661 234 567" required
+                data-validate="phone">
+              <div class="error-msg"></div>
+            </div>
+          </div>
+          <div class="form-section-title" style="margin-top:28px;">
+            <span>2</span> Planifier la visite
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cmd-date">Date souhaitée *</label>
+              <input type="date" id="cmd-date" name="date" required>
+              <div class="error-msg"></div>
+            </div>
+            <div class="form-group">
+              <label for="cmd-heure">Heure souhaitée *</label>
+              <select id="cmd-heure" name="heure" required>
+                <option value="">Choisir une heure</option>
+                <option value="09:00">09:00 – 10:00</option>
+                <option value="10:00">10:00 – 11:00</option>
+                <option value="11:00">11:00 – 12:00</option>
+                <option value="14:00">14:00 – 15:00</option>
+                <option value="15:00">15:00 – 16:00</option>
+                <option value="16:00">16:00 – 17:00</option>
+              </select>
+              <div class="error-msg"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cmd-motif">Type de demande *</label>
+            <select id="cmd-motif" name="motif" required>
+              <option value="">Sélectionner...</option>
+              <option value="visite">Visite du bien</option>
+              <option value="info">Demande d'informations</option>
+              <option value="offre">Faire une offre</option>
+              <option value="financement">Conseil en financement</option>
+            </select>
+            <div class="error-msg"></div>
+          </div>
+          <div class="form-section-title" style="margin-top:28px;">
+            <span>3</span> Message (optionnel)
+          </div>
+
+          <div class="form-group">
+            <label for="cmd-message">Questions ou remarques</label>
+            <textarea id="cmd-message" name="message" rows="4"
+              placeholder="Précisez vos questions ou besoins particuliers..."
+              style="resize:vertical;"></textarea>
+          </div>
+
+          <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:16px;">
+            <input type="checkbox" id="cmd-terms" style="accent-color:var(--primary); width:15px; height:15px; margin-top:2px;" required>
+            <label for="cmd-terms" style="font-size:0.83rem; color:var(--muted); cursor:pointer; line-height:1.4;">
+              J'accepte d'être contacté par l'agence concernant cette demande et je confirme l'exactitude des informations fournies.
+            </label>
+          </div>
+
+          <button type="submit" class="btn-full" id="cmd-btn" style="margin-top:0;">
+            📅 Confirmer la réservation
+          </button>
+
+        </form>
+        <div id="cmd-success" style="display:none;"
+          class="commande-form-card"
+          style="text-align:center; padding:60px 40px;">
+          <div style="font-size:4rem; margin-bottom:20px;">🎉</div>
+          <h2 style="font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--dark); margin-bottom:12px;">
+            Réservation Confirmée !
+          </h2>
+          <p style="color:var(--muted); line-height:1.7; margin-bottom:28px;">
+            Merci <strong id="success-name"></strong> ! Votre demande a été enregistrée avec succès.<br>
+            Un de nos agents vous contactera dans les <strong>24h</strong> pour confirmer votre rendez-vous.
+          </p>
+          <div style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+            <a href="produits.html" class="btn-primary" style="display:inline-flex;">
+              🔍 Voir d'autres biens
+            </a>
+            <a href="../index.html" class="btn-outline"
+              style="display:inline-flex; color:var(--primary); border-color:var(--primary);">
+              🏠 Accueil
+            </a>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <div class="commande-summary">
+          <h3 style="font-size:1rem; font-weight:700; color:var(--dark); margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--bg);">
+            📋 Récapitulatif
+          </h3>
+          <div class="summary-item">
+            <span class="label">🏠 Propriété</span>
+            <span class="value" id="summary-property">–</span>
+          </div>
+          <div class="summary-item">
+            <span class="label">📍 Ville</span>
+            <span class="value" id="summary-city">–</span>
+          </div>
+          <div class="summary-item">
+            <span class="label">🔑 Type</span>
+            <span class="value" id="summary-type">–</span>
+          </div>
+          <div class="summary-item summary-total">
+            <span>💰 Prix</span>
+            <span id="summary-price">–</span>
+          </div>
+
+          <div style="background:var(--primary-light); border-radius:var(--radius); padding:16px; margin-top:20px;">
+            <p style="font-size:0.83rem; color:var(--primary); font-weight:600; margin-bottom:8px;">✅ Visites gratuites</p>
+            <p style="font-size:0.82rem; color:var(--text); line-height:1.5;">
+              La réservation d'une visite est entièrement gratuite et sans engagement. Annulation possible jusqu'à 24h avant.
+            </p>
+          </div>
+
+          <div style="margin-top:20px; padding:16px; border:1px solid var(--border); border-radius:var(--radius);">
+            <p style="font-size:0.83rem; font-weight:600; color:var(--dark); margin-bottom:8px;">📞 Besoin d'aide ?</p>
+            <p style="font-size:0.82rem; color:var(--muted);">Appelez-nous directement :</p>
+            <a href="tel:+213550123456" style="display:block; font-weight:700; color:var(--primary); font-size:0.95rem; margin-top:4px; text-decoration:none;">
+              +213 550 123 456
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+  <footer style="padding:28px 5%;">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© 2025 ImmoPremier – Tous droits réservés</span>
+      <span><a href="../index.html" style="color:rgba(255,255,255,0.45);">🏠 Retour à l'accueil</a></span>
+    </div>
+  </footer>
+
+  <script src="../javascript/produits.js"></script>
+  <script src="../javascript/auth.js"></script>
+  <script src="../javascript/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('cmd-date');
+      if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+      }
+    });
+    document.getElementById('commande-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      let valid = true;
+      const fields = [
+        { id: 'cmd-prenom', rule: 'prenom' },
+        { id: 'cmd-nom',    rule: 'nom' },
+        { id: 'cmd-email',  rule: 'email' },
+        { id: 'cmd-tel',    rule: 'phone' }
+      ];
+
+      fields.forEach(f => {
+        const el = document.getElementById(f.id);
+        const err = validateField(f.rule, el.value);
+        if (err) { showError(f.id, err); valid = false; }
+        else clearError(f.id);
+      });
+
+      const date = document.getElementById('cmd-date').value;
+      if (!date) { showError('cmd-date', 'Veuillez sélectionner une date'); valid = false; }
+      else clearError('cmd-date');
+
+      const heure = document.getElementById('cmd-heure').value;
+      if (!heure) { showError('cmd-heure', 'Veuillez sélectionner une heure'); valid = false; }
+      else clearError('cmd-heure');
+
+      const motif = document.getElementById('cmd-motif').value;
+      if (!motif) { showError('cmd-motif', 'Veuillez sélectionner un type de demande'); valid = false; }
+      else clearError('cmd-motif');
+
+      const terms = document.getElementById('cmd-terms');
+      if (!terms.checked) {
+        alert('Veuillez accepter les conditions pour continuer.');
+        valid = false;
+      }
+
+      if (valid) handleCommande(e);
+    }, { capture: true });
+  </script>
+</body>
+</html>

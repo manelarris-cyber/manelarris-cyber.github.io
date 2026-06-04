@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Agence Immobilière – Trouvez votre bien idéal en Algérie. Vente, location, appartements, villas, terrains.">
+    <title>Agence Immobilière | Votre Partenaire Immobilier de Confiance</title>
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav>
+        <a href="index.html" class="nav-logo">
+           <img src="content/logo.png" alt="Logo ImmoPremier" class="custom-logo">
+            <span>ImmoPremier</span>
+        </a>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active">Accueil</a></li>
+            <li><a href="content/produits.html">Propriétés</a></li>
+            <li><a href="content/produits.html?trans=vente">Acheter</a></li>
+            <li><a href="content/produits.html?trans=location">Louer</a></li>
+            <li><a href="content/favoris.html" style="position:relative;">
+  Favoris ❤️
+  <span id="fav-count" style="
+    position:absolute; top:-6px; right:-6px;
+    background:var(--accent); color:#fff;
+    width:16px; height:16px; border-radius:50%;
+    font-size:0.65rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  ">0</span>
+</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li id="nav-auth"><a href="content/connexion.html" class="nav-cta">Se connecter</a></li>
+        </ul>
+
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">✨ N°1 de l'immobilier en Algérie</div>
+    <h1>Trouvez votre bien<br>idéal <span>au meilleur prix</span></h1>
+    <p>Appartements, villas, terrains à travers toute l'Algérie.<br>
+    Achetez ou louez facilement en quelques clics.</p>
+    <div class="hero-btns">
+      <a href="content/produits.html?trans=vente" class="btn-primary">🏠 Voir les propriétés</a>
+       <a href="content/commande.html" class="btn-outline">📅 Réserver une visite</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <img src="content/ai1.png" alt="Immobilier Algérie" class="hero-img">
+    <div class="hero-card floating" style="bottom:30px;left:-20px;">
+      🏡 <strong>+40 propriétés</strong><br><small>disponibles maintenant</small>
+    </div>
+    <div class="hero-card floating" style="top:40px;right:-10px;">
+      ✅ <strong>Vente & Location</strong><br><small>partout en Algérie</small>
+    </div>
+  </div>
+</section>
+
+    <!-- ========== SEARCH BAR ========== -->
+    <div class="search-section">
+        <div class="search-bar">
+            <select id="hero-trans" aria-label="Type de transaction">
+                <option value="">🔑 Acheter / Louer</option>
+                <option value="vente">🏷️ Acheter</option>
+                <option value="location">🔑 Louer</option>
+            </select>
+            <select id="hero-type" aria-label="Type de bien">
+                <option value="">🏠 Type de bien</option>
+                <option value="appartement">Appartement</option>
+                <option value="villa">Villa</option>
+                <option value="maison">Maison</option>
+                <option value="bureau">Bureau</option>
+                <option value="terrain">Terrain</option>
+                <option value="studio">Studio</option>
+            </select>
+            <input id="hero-city" type="text" placeholder="📍 Ville ou wilaya..." aria-label="Ville">
+            <button id="hero-search-btn">Rechercher</button>
+        </div>
+    </div>
+
+    <!-- ========== STATS ========== -->
+    <div class="stats" style="position:relative; overflow:hidden;">
+    <div class="stat-item">
+        <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+                <path d="M9 21V12h6v9"/>
+            </svg>
+        </div>
+        <div class="stat-num" data-count="1250" data-suffix="+">0</div>
+        <div class="stat-label">Propriétés disponibles</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+        </div>
+        <div class="stat-num" data-count="8500" data-suffix="+">0</div>
+        <div class="stat-label">Clients satisfaits</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+                <circle cx="12" cy="9" r="2.5"/>
+            </svg>
+        </div>
+        <div class="stat-num" data-count="48">0</div>
+        <div class="stat-label">Wilayas couvertes</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-icon-circle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+            </svg>
+        </div>
+        <div class="stat-num" data-count="15" data-suffix=" ans">0</div>
+        <div class="stat-label">D'expérience</div>
+    </div>
+</div>
+    <!-- ========== FEATURED PROPERTIES ========== -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">Sélection Exclusive</span>
+            <h2>Propriétés en Vedette</h2>
+            <p>Découvrez notre sélection des meilleures propriétés disponibles en ce moment.</p>
+        </div>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterHomeFeatured('tous', this)">Tous</button>
+            <button class="filter-btn" onclick="filterHomeFeatured('vente', this)">À Vendre</button>
+            <button class="filter-btn" onclick="filterHomeFeatured('location', this)">À Louer</button>
+            <button class="filter-btn" onclick="filterHomeFeatured('appartement', this)">Appartements</button>
+            <button class="filter-btn" onclick="filterHomeFeatured('villa', this)">Villas</button>
+        </div>
+
+        <div class="properties-grid" id="featured-grid">
+            <!-- Filled by JS -->
+        </div>
+
+        <div style="text-align:center; margin-top:40px;">
+            <a href="content/produits.html" class="btn-primary" style="display:inline-flex;">
+                Voir toutes les propriétés →
+            </a>
+        </div>
+    </section>
+
+    <!-- ========== WHY US ========== -->
+    <section class="section" style="background:var(--bg);">
+        <div class="section-header">
+            <span class="section-label">Nos Avantages</span>
+            <h2>Pourquoi Choisir ImmoPremier ?</h2>
+            <p>Nous mettons notre expertise à votre service pour vous aider à trouver le bien idéal.</p>
+        </div>
+        <div class="why-grid">
+            <div class="why-card">
+                <div class="why-icon">🔍</div>
+                <h3>Recherche Facile</h3>
+                <p>Filtrez parmi des centaines de propriétés selon vos critères : prix, surface, wilaya, type de bien.
+                </p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">✅</div>
+                <h3>Biens Vérifiés</h3>
+                <p>Chaque propriété est contrôlée et validée par nos experts avant d'être publiée sur notre plateforme.
+                </p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">🤝</div>
+                <h3>Accompagnement Complet</h3>
+                <p>De la recherche à la signature, nos agents vous accompagnent à chaque étape de votre projet.</p>
+            </div>
+            <div class="why-card">
+                <div class="why-icon">💰</div>
+                <h3>Meilleurs Prix</h3>
+                <p>Nous négocions pour vous les meilleures conditions et veillons à la transparence totale des tarifs.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== AGENTS ========== -->
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">Notre Équipe</span>
+            <h2>Nos Agents Immobiliers</h2>
+            <p>Une équipe de professionnels passionnés et expérimentés à votre service.</p>
+        </div>
+        <div class="agents-grid">
+            <div class="agent-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=200&h=200&fit=crop" alt="Agent"
+                    class="agent-img">
+                <div class="agent-name">Karim Amine</div>
+                <div class="agent-role">Directeur Agence</div>
+                <div class="agent-info">📍 Alger | 15 ans d'exp.</div>
+                <div class="agent-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="tel:0550123456" aria-label="Téléphone">📞</a>
+                </div>
+            </div>
+            <div class="agent-card">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop" alt="Agent"
+                    class="agent-img">
+                <div class="agent-name">Samira Benali</div>
+                <div class="agent-role">Agent Senior</div>
+                <div class="agent-info">📍 Oran | 8 ans d'exp.</div>
+                <div class="agent-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="tel:0661234567" aria-label="Téléphone">📞</a>
+                </div>
+            </div>
+            <div class="agent-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" alt="Agent"
+                    class="agent-img">
+                <div class="agent-name">Rachid Essaïd</div>
+                <div class="agent-role">Agent Commercial</div>
+                <div class="agent-info">📍 Constantine | 6 ans d'exp.</div>
+                <div class="agent-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="tel:0660567890" aria-label="Téléphone">📞</a>
+                </div>
+            </div>
+            <div class="agent-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop" alt="Agent"
+                    class="agent-img">
+                <div class="agent-name">Fatima Djebbar</div>
+                <div class="agent-role">Conseillère Juridique</div>
+                <div class="agent-info">📍 Annaba | 10 ans d'exp.</div>
+                <div class="agent-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="tel:0555456789" aria-label="Téléphone">📞</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section class="section testimonials-bg">
+        <div class="section-header">
+            <span class="section-label">Avis Clients</span>
+            <h2>Ce que Disent nos Clients</h2>
+            <p>La satisfaction de nos clients est notre plus grande récompense.</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">Excellent service ! L'équipe d'ImmoPremier nous a trouvé notre appartement
+                    idéal à Alger en moins de deux semaines. Très professionnels et à l'écoute.</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+                        alt="Client">
+                    <div>
+                        <div class="author-name">Mohamed L.</div>
+                        <div class="author-city">📍 Alger</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-text">J'ai vendu ma villa en un temps record grâce à ImmoPremier. Le processus
+                    était simple, transparent et l'équipe très réactive. Je recommande vivement !</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+                        alt="Cliente">
+                    <div>
+                        <div class="author-name">Nadia K.</div>
+                        <div class="author-city">📍 Oran</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="stars">★★★★☆</div>
+                <p class="testimonial-text">Très bonne expérience, site facile à utiliser, photos de qualité. L'agent
+                    nous a accompagnés jusqu'à la signature du contrat. Très satisfait du service.</p>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=100&h=100&fit=crop"
+                        alt="Client">
+                    <div>
+                        <div class="author-name">Yanis B.</div>
+                        <div class="author-city">📍 Constantine</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA BANNER ========== -->
+    <section class="section" style="background:var(--primary-light); text-align:center;">
+        <h2 style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--dark); margin-bottom:16px;">
+            Vous avez un bien à vendre ou à louer ?
+        </h2>
+        <p style="color:var(--muted); margin-bottom:28px; max-width:500px; margin-left:auto; margin-right:auto;">
+            Publiez votre annonce gratuitement et touchez des milliers d'acheteurs potentiels en Algérie.
+        </p>
+        <a href="content/inscription.html" class="btn-primary">Déposer une annonce gratuitement →</a>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section" id="contact">
+        <div class="section-header">
+            <span class="section-label">Contact</span>
+            <h2>Contactez-Nous</h2>
+            <p>Notre équipe est disponible 7j/7 pour répondre à toutes vos questions.</p>
+        </div>
+        <div
+            style="display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:24px; max-width:900px; margin:0 auto;">
+            <div
+                style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-align:center;box-shadow:var(--shadow);">
+                <div style="font-size:2rem;margin-bottom:12px;">📞</div>
+                <h3 style="font-weight:600;margin-bottom:8px;color:var(--dark);">Téléphone</h3>
+                <p style="color:var(--muted);font-size:0.9rem;">+213 550 123 456<br>+213 661 234 567</p>
+            </div>
+            <div
+                style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-align:center;box-shadow:var(--shadow);">
+                <div style="font-size:2rem;margin-bottom:12px;">✉️</div>
+                <h3 style="font-weight:600;margin-bottom:8px;color:var(--dark);">Email</h3>
+                <p style="color:var(--muted);font-size:0.9rem;">contact@agenceimmo.dz<br>admin@agenceimmo.dz</p>
+            </div>
+            <div
+                style="background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-align:center;box-shadow:var(--shadow);">
+                <div style="font-size:2rem;margin-bottom:12px;">📍</div>
+                <h3 style="font-weight:600;margin-bottom:8px;color:var(--dark);">Adresse</h3>
+                <p style="color:var(--muted);font-size:0.9rem;">12 Rue Larbi Ben M'hidi<br>Alger Centre, 16000</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo" style="margin-bottom:12px; display:inline-flex;">
+                    <img src="content/logo.png" alt="Logo ImmoPremier" class="custom-logo">
+                    <span style="font-size:1.2rem;">ImmoPremier</span>
+                </a>
+                <p>Votre partenaire immobilier de confiance en Algérie depuis 2009. Vente, location, conseils
+                    juridiques.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Propriétés</h4>
+                <ul>
+                    <li><a href="content/produits.html?trans=vente">Biens à vendre</a></li>
+                    <li><a href="content/produits.html?trans=location">Biens à louer</a></li>
+                    <li><a href="content/produits.html?type=villa">Villas</a></li>
+                    <li><a href="content/produits.html?type=appartement">Appartements</a></li>
+                    <li><a href="content/produits.html?type=terrain">Terrains</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Agence</h4>
+                <ul>
+                    <li><a href="#">À propos</a></li>
+                    <li><a href="#">Notre équipe</a></li>
+                    <li><a href="#">Actualités</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#">Rejoignez-nous</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Aide</h4>
+                <ul>
+                    <li><a href="#">Guide d'achat</a></li>
+                    <li><a href="#">Guide de location</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Conditions d'utilisation</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 ImmoPremier – Tous droits réservés</span>
+            <span>Développé avec ❤️ par l'équipe ImmoPremier</span>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script src="javascript/produits.js"></script>
+    <script src="javascript/auth.js"></script>
+    <script src="javascript/main.js"></script>
+    <script>
+        // Quick filter on homepage
+        function filterHomeFeatured(filter, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const cards = document.querySelectorAll('#featured-grid .property-card');
+            cards.forEach(card => {
+                const match = filter === 'tous'
+                    || card.dataset.transaction === filter
+                    || card.dataset.type === filter;
+                card.style.display = match ? '' : 'none';
+            });
+        }
+    </script>
+
+</body>
+
+</html>

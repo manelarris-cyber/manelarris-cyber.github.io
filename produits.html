@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parcourez toutes nos propriétés disponibles à la vente et à la location en Algérie.">
+  <title>Propriétés | ImmoPremier</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+       <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+      <span>ImmoPremier</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="produits.html">Propriétés</a></li>
+      <li><a href="produits.html?trans=vente">Acheter</a></li>
+      <li><a href="produits.html?trans=location">Louer</a></li>
+      <li id="nav-auth"><a href="connexion.html" class="nav-cta">Se connecter</a></li>
+      <li><a href="favoris.html" style="position:relative;">
+  Favoris ❤️
+  <span id="fav-count" style="
+    position:absolute; top:-6px; right:-6px;
+    background:var(--accent); color:#fff;
+    width:16px; height:16px; border-radius:50%;
+    font-size:0.65rem; font-weight:700;
+    display:flex; align-items:center; justify-content:center;
+  ">0</span>
+</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <header class="page-header">
+    <div class="page-header-content">
+      <div class="breadcrumb">
+        <a href="../index.html">🏠 Accueil</a>
+        <span>›</span>
+        <span>Propriétés</span>
+      </div>
+      <h1>Nos Propriétés</h1>
+      <p>Découvrez notre catalogue complet de biens immobiliers à travers toute l'Algérie</p>
+    </div>
+  </header>
+  <div class="products-layout">
+    <aside class="filter-sidebar">
+      <h3>🔍 Filtres</h3>
+
+      <div class="filter-group">
+        <label>Transaction</label>
+        <select id="filter-transaction" onchange="applyFilters()" aria-label="Type de transaction">
+          <option value="tous">Tous</option>
+          <option value="vente">À Vendre</option>
+          <option value="location">À Louer</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Type de bien</label>
+        <select id="filter-type" onchange="applyFilters()" aria-label="Type de bien">
+          <option value="tous">Tous les types</option>
+          <option value="appartement">Appartement</option>
+          <option value="villa">Villa</option>
+          <option value="maison">Maison</option>
+          <option value="duplex">Duplex</option>
+          <option value="studio">Studio</option>
+          <option value="bureau">Bureau</option>
+          <option value="local">Local Commercial</option>
+          <option value="terrain">Terrain</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Wilaya</label>
+        <select id="filter-wilaya" onchange="applyFilters()" aria-label="Wilaya">
+          <option value="tous">Toutes les wilayas</option>
+          <option value="Alger">Alger</option>
+          <option value="Oran">Oran</option>
+          <option value="Constantine">Constantine</option>
+          <option value="Annaba">Annaba</option>
+          <option value="Tizi-Ouzou">Tizi-Ouzou</option>
+          <option value="Sétif">Sétif</option>
+          <option value="Blida">Blida</option>
+          <option value="Médéa">Médéa</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label>Prix maximum</label>
+        <input
+          type="range"
+          id="filter-price"
+          min="0 "
+          max="35000000"
+          step="500000"
+          value="35000000"
+          onchange="applyFilters()"
+          aria-label="Prix maximum"
+        >
+        <div class="price-display" id="price-display">35 000 000 DA</div>
+      </div>
+
+      <button class="btn-filter-apply" onclick="applyFilters()">Appliquer les filtres</button>
+      <button class="btn-filter-reset" onclick="resetFilters()">Réinitialiser</button>
+    </aside>
+    <main class="products-main">
+      <div class="products-toolbar">
+        <p class="results-count"><span id="results-count">12</span> propriétés trouvées</p>
+        <select id="sort-select" class="sort-select" onchange="applyFilters()" aria-label="Trier par">
+          <option value="default">Trier par défaut</option>
+          <option value="price-asc">Prix croissant</option>
+          <option value="price-desc">Prix décroissant</option>
+          <option value="surface">Plus grande surface</option>
+          <option value="new">Nouveautés d'abord</option>
+        </select>
+      </div>
+
+      <div class="properties-grid" id="properties-grid">
+      </div>
+
+      <div id="no-results">
+        <div style="font-size:3rem; margin-bottom:16px;">🔍</div>
+        <h3>Aucune propriété trouvée</h3>
+        <p>Essayez de modifier vos critères de recherche</p>
+        <button onclick="resetFilters()" class="btn-primary" style="margin-top:20px; display:inline-flex;">
+          Réinitialiser les filtres
+        </button>
+      </div>
+    </main>
+  </div>
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="../index.html" class="nav-logo" style="margin-bottom:12px; display:inline-flex;">
+          <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+          <span>ImmoPremier</span>
+        </a>
+        <p>Votre partenaire immobilier de confiance en Algérie depuis 2009.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="LinkedIn">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="../index.html">Accueil</a></li>
+          <li><a href="produits.html">Propriétés</a></li>
+          <li><a href="connexion.html">Connexion</a></li>
+          <li><a href="inscription.html">Inscription</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+213550123456">&#x260E;&#xFE0E; Telephone 0550 123 456</a></li>
+          <li><a href="mailto:contact@agenceimmo.dz">✉️ Email contact@agenceimmo.dz</a></li>
+          <li><a href="#">📍 Adresse Alger Centre</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="#">Conditions d'utilisation</a></li>
+          <li><a href="#">Confidentialité</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ImmoPremier – Tous droits réservés</span>
+      <span>Développé avec ❤️</span>
+    </div>
+  </footer>
+
+  <script src="../javascript/produits.js"></script>
+  <script src="../javascript/auth.js"></script>
+  <script src="../javascript/main.js"></script>
+
+</body>
+</html>

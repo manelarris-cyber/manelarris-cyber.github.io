@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Connectez-vous à votre compte ImmoPremier">
+  <title>Connexion | ImmoPremier</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+
+<body>
+  <nav>
+    <a href="index.html" class="nav-logo" style="gap: 4px;">
+      <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+      <span>ImmoPremier</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="produits.html">Propriétés</a></li>
+      <li><a href="connexion.html" class="active">Connexion</a></li>
+      <li><a href="inscription.html" class="nav-cta">S'inscrire</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <main class="auth-page">
+    <div class="auth-card">
+      <div class="auth-logo">
+        <div class="auth-logo">
+  <div class="auth-logo">
+  <div class="auth-logo">
+  <img src="logo.png" alt="Logo ImmoPremier" style="
+    width:140px; 
+    height:140px; 
+    object-fit:contain; 
+    filter: drop-shadow(0 0 20px rgba(139,92,246,1)) drop-shadow(0 0 40px rgba(236,72,153,0.7));
+    margin-bottom:4px;
+  ">
+  <h2>Bon retour !</h2>
+  <p>Connectez-vous à votre compte ImmoPremier</p>
+</div>
+</div>
+
+      </div>
+      <div class="alert" id="login-alert" role="alert"></div>
+
+      <form id="login-form" onsubmit="handleLogin(event)" novalidate>
+
+        <div class="form-group">
+          <label for="login-email">Adresse email</label>
+          <input type="email" id="login-email" name="email" placeholder="votre@email.com" autocomplete="email"
+            data-validate="email" required>
+          <div class="error-msg" id="login-email-err"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="login-password">
+            Mot de passe
+            <a href="#" style="float:right; font-size:0.78rem; color:var(--primary); text-decoration:none;">Mot de passe
+              oublié ?</a>
+          </label>
+          <div style="position:relative;">
+            <input type="password" id="login-password" name="password" placeholder="Votre mot de passe"
+              autocomplete="current-password" required>
+            <button type="button" onclick="togglePwd('login-password', this)"
+              style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;font-size:1rem;">
+
+            </button>
+          </div>
+          <div class="error-msg" id="login-password-err"></div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">
+          <input type="checkbox" id="remember-me" style="accent-color:var(--primary); width:15px; height:15px;">
+          <label for="remember-me" style="font-size:0.87rem; color:var(--muted); cursor:pointer;">Se souvenir de
+            moi</label>
+        </div>
+
+        <button type="submit" class="btn-full" id="login-btn">Se connecter</button>
+
+      </form>
+
+      <div class="divider">ou</div>
+
+      <div
+        style="background:var(--bg); border-radius:var(--radius); padding:14px; font-size:0.82rem; color:var(--muted); margin-bottom:16px;">
+        <strong style="color:var(--dark);">🔑 Comptes de démo :</strong><br>
+        Admin: admin@agenceimmo.dz / Admin@123<br>
+        Client: samira@email.com / Samira@2024
+      </div>
+
+      <p class="auth-footer-text">
+        Pas encore de compte ?
+        <a href="inscription.html">Créer un compte gratuitement</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="../javascript/produits.js"></script>
+  <script src="../javascript/auth.js"></script>
+  <script>
+    function togglePwd(id, btn) {
+      const input = document.getElementById(id);
+      if (input.type === 'password') { input.type = 'text'; }
+      else { input.type = 'password'; }
+    }
+  </script>
+</body>
+
+</html>

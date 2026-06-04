@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Favoris | ImmoPremier</title>
+  <link rel="stylesheet" href="../style/style.css">
+</head>
+<body>
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+      <span>ImmoPremier</span>
+    </a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="../index.html">Accueil</a></li>
+      <li><a href="produits.html">Propriétés</a></li>
+      <li><a href="favoris.html" class="active">❤️ Favoris</a></li>
+      <li id="nav-auth"><a href="connexion.html" class="nav-cta">Se connecter</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+    <div class="page-header-content">
+      <div class="breadcrumb">
+        <a href="../index.html">🏠 Accueil</a>
+        <span>›</span>
+        <span>Mes Favoris</span>
+      </div>
+      <h1>❤️ Mes Favoris</h1>
+      <p>Les propriétés que vous avez sauvegardées</p>
+    </div>
+  </header>
+
+  <div class="products-layout" style="grid-template-columns:1fr;">
+    <main class="products-main">
+      <div class="products-toolbar">
+        <p class="results-count"><span id="fav-results-count">0</span> propriété(s) en favoris</p>
+        <button onclick="clearAllFavs()" style="
+          padding:9px 18px; border-radius:8px;
+          border:2px solid var(--accent); background:transparent;
+          color:var(--accent); cursor:pointer; font-size:0.85rem;
+          font-family:'Poppins',sans-serif; font-weight:600;
+          transition:all 0.3s;
+        " onmouseover="this.style.background='var(--accent)';this.style.color='#fff'"
+           onmouseout="this.style.background='transparent';this.style.color='var(--accent)'">
+          🗑️ Vider les favoris
+        </button>
+      </div>
+
+      <div class="properties-grid" id="fav-grid"></div>
+
+      <div id="no-favs" style="display:none; text-align:center; padding:80px 20px; color:var(--muted);">
+        <div style="font-size:4rem; margin-bottom:16px;">💔</div>
+        <h3 style="font-size:1.3rem; margin-bottom:8px; color:var(--dark);">Aucun favori pour l'instant</h3>
+        <p>Parcourez nos propriétés et cliquez sur ❤️ pour les sauvegarder</p>
+        <a href="produits.html" class="btn-primary" style="margin-top:24px; display:inline-flex;">
+          🏠 Voir les propriétés
+        </a>
+      </div>
+    </main>
+  </div>
+
+  <footer style="padding:28px 5%;">
+    <div class="footer-bottom" style="border-top:none; padding-top:0;">
+      <span>© 2026 ImmoPremier – Tous droits réservés</span>
+      <span><a href="../index.html" style="color:rgba(255,255,255,0.45);">🏠 Retour à l'accueil</a></span>
+    </div>
+  </footer>
+
+  <script src="../javascript/produits.js"></script>
+  <script src="../javascript/auth.js"></script>
+  <script src="../javascript/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const favIds = getFavs();
+      const grid = document.getElementById('fav-grid');
+      const noFavs = document.getElementById('no-favs');
+      const count = document.getElementById('fav-results-count');
+
+      if (favIds.length === 0) {
+        noFavs.style.display = 'block';
+        count.textContent = '0';
+        return;
+      }
+
+      const favProps = PROPERTIES.filter(p => favIds.includes(p.id));
+      count.textContent = favProps.length;
+      grid.innerHTML = favProps.map(createPropertyCard).join('');
+    });
+
+    function clearAllFavs() {
+      if (confirm('Vider tous les favoris ?')) {
+        localStorage.removeItem('immo_favs');
+        location.reload();
+      }
+    }
+  </script>
+</body>
+</html>
