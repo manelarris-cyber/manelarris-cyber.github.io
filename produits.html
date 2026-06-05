@@ -1,15 +1,18 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Parcourez toutes nos propriétés disponibles à la vente et à la location en Algérie.">
+  <meta name="description"
+    content="Parcourez toutes nos propriétés disponibles à la vente et à la location en Algérie.">
   <title>Propriétés | ImmoPremier</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <nav>
     <a href="index.html" class="nav-logo">
-       <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+      <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
       <span>ImmoPremier</span>
     </a>
     <ul class="nav-links" id="nav-links">
@@ -19,15 +22,15 @@
       <li><a href="produits.html?trans=location">Louer</a></li>
       <li id="nav-auth"><a href="connexion.html" class="nav-cta">Se connecter</a></li>
       <li><a href="favoris.html" style="position:relative;">
-  Favoris ❤️
-  <span id="fav-count" style="
+          Favoris ❤️
+          <span id="fav-count" style="
     position:absolute; top:-6px; right:-6px;
     background:var(--accent); color:#fff;
     width:16px; height:16px; border-radius:50%;
     font-size:0.65rem; font-weight:700;
     display:flex; align-items:center; justify-content:center;
   ">0</span>
-</a></li>
+        </a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -89,16 +92,8 @@
 
       <div class="filter-group">
         <label>Prix maximum</label>
-        <input
-          type="range"
-          id="filter-price"
-          min="0 "
-          max="35000000"
-          step="500000"
-          value="35000000"
-          onchange="applyFilters()"
-          aria-label="Prix maximum"
-        >
+        <input type="range" id="filter-price" min="0 " max="35000000" step="500000" value="35000000"
+          onchange="applyFilters()" aria-label="Prix maximum">
         <div class="price-display" id="price-display">35 000 000 DA</div>
       </div>
 
@@ -181,4 +176,5 @@
   <script src="main.js"></script>
 
 </body>
+
 </html>
