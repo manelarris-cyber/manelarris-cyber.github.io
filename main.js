@@ -1,4 +1,3 @@
-// ========== PARTICULES ==========
 function injectParticles(container, count) {
     if (!container) return;
     container.style.position = 'relative';
@@ -30,55 +29,51 @@ function injectParticles(container, count) {
         });
     }
 }
-
-// ========== TOUT LE RESTE ==========
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Bouton retour en haut ---
-const backToTop = document.createElement('button');
-backToTop.innerHTML = '↑';
-backToTop.title = 'Retour en haut';
-Object.assign(backToTop.style, {
-  position: 'fixed',
-  bottom: '30px',
-  right: '30px',
-  width: '46px',
-  height: '46px',
-  borderRadius: '50%',
-  background: 'var(--primary)',
-  color: '#fff',
-  border: 'none',
-  fontSize: '1.3rem',
-  cursor: 'pointer',
-  zIndex: '9999',
-  display: 'none',
-  alignItems: 'center',
-  justifyContent: 'center',
-  boxShadow: '0 0 20px rgba(139,92,246,0.6)',
-  transition: 'all 0.3s',
-});
-document.body.appendChild(backToTop);
+    const backToTop = document.createElement('button');
+    backToTop.innerHTML = '↑';
+    backToTop.title = 'Retour en haut';
+    Object.assign(backToTop.style, {
+        position: 'fixed',
+        bottom: '30px',
+        right: '30px',
+        width: '46px',
+        height: '46px',
+        borderRadius: '50%',
+        background: 'var(--primary)',
+        color: '#fff',
+        border: 'none',
+        fontSize: '1.3rem',
+        cursor: 'pointer',
+        zIndex: '9999',
+        display: 'none',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 0 20px rgba(139,92,246,0.6)',
+        transition: 'all 0.3s',
+    });
+    document.body.appendChild(backToTop);
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    backToTop.style.display = 'flex';
-  } else {
-    backToTop.style.display = 'none';
-  }
-});
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTop.style.display = 'flex';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
 
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+    backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-backToTop.addEventListener('mouseover', () => {
-  backToTop.style.background = 'var(--accent)';
-  backToTop.style.transform = 'translateY(-3px)';
-});
-backToTop.addEventListener('mouseout', () => {
-  backToTop.style.background = 'var(--primary)';
-  backToTop.style.transform = 'translateY(0)';
-});
-// --- Particules ---
+    backToTop.addEventListener('mouseover', () => {
+        backToTop.style.background = 'var(--accent)';
+        backToTop.style.transform = 'translateY(-3px)';
+    });
+    backToTop.addEventListener('mouseout', () => {
+        backToTop.style.background = 'var(--primary)';
+        backToTop.style.transform = 'translateY(0)';
+    });
     const heroSection = document.querySelector('.hero');
     if (heroSection) injectParticles(heroSection, 60);
 
@@ -87,54 +82,41 @@ backToTop.addEventListener('mouseout', () => {
         const parentSection = featuredGrid.closest('.section');
         if (parentSection) injectParticles(parentSection, 50);
     }
-
-    // Agents section
     const agentsGrid = document.querySelector('.agents-grid');
     if (agentsGrid) {
         const agentsSection = agentsGrid.closest('.section');
         if (agentsSection) injectParticles(agentsSection, 40);
     }
-
-    // Contact section
     const contactSection = document.getElementById('contact');
     if (contactSection) injectParticles(contactSection, 35);
-    // Avis clients
     const testimonialsGrid = document.querySelector('.testimonials-grid');
     if (testimonialsGrid) {
         const testimonialsSection = testimonialsGrid.closest('.section');
         if (testimonialsSection) injectParticles(testimonialsSection, 40);
     }
-
-    // Nos avantages
     const whyGrid = document.querySelector('.why-grid');
     if (whyGrid) {
         const whySection = whyGrid.closest('.section');
         if (whySection) injectParticles(whySection, 40);
     }
-    // Stats section
     const statsSection = document.querySelector('.stats');
     if (statsSection) injectParticles(statsSection, 35);
-
-    // --- Hamburger ---
     const ham = document.getElementById('hamburger');
     if (ham) {
         ham.addEventListener('click', () => {
             document.getElementById('nav-links')?.classList.toggle('open');
         });
     }
-  const pageHeader = document.querySelector('.page-header');
+    const pageHeader = document.querySelector('.page-header');
 
-if (pageHeader) {
-    injectParticles(pageHeader, 120);
-}
-    // Page produits
-const productsSection = document.querySelector('.products-layout');
+    if (pageHeader) {
+        injectParticles(pageHeader, 120);
+    }
+    const productsSection = document.querySelector('.products-layout');
 
-if (productsSection) {
-    injectParticles(productsSection, 80);
-}
-
-    // --- Effet lumière sur les cartes ---
+    if (productsSection) {
+        injectParticles(productsSection, 80);
+    }
     document.addEventListener('mousemove', (e) => {
         document.querySelectorAll('.property-card, .why-card, .agent-card').forEach(card => {
             const rect = card.getBoundingClientRect();
@@ -142,8 +124,6 @@ if (productsSection) {
             card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
         });
     });
-
-    // --- Nav active ---
     const navLinks = document.querySelectorAll('.nav-links a');
     const urlParams = new URLSearchParams(window.location.search);
     const transParam = urlParams.get('trans');
@@ -183,8 +163,6 @@ if (productsSection) {
             }
         });
     });
-
-    // --- Compteurs stats ---
     function animateCounter(el, target, duration = 2000, suffix = '') {
         let start = 0;
         const step = target / (duration / 16);
@@ -211,8 +189,6 @@ if (productsSection) {
     }, { threshold: 0.4 });
 
     document.querySelectorAll('.stats').forEach(el => statsObs.observe(el));
-
-    // --- Fade-in cartes ---
     const fadeObs = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -228,34 +204,28 @@ if (productsSection) {
         el.dataset.delay = `${i * 0.08}s`;
         fadeObs.observe(el);
     });
-
-    // --- Recherche hero ---
     const heroSearchBtn = document.getElementById('hero-search-btn');
     if (heroSearchBtn) {
         heroSearchBtn.addEventListener('click', () => {
-            const type  = document.getElementById('hero-type')?.value || '';
-            const city  = document.getElementById('hero-city')?.value || '';
+            const type = document.getElementById('hero-type')?.value || '';
+            const city = document.getElementById('hero-city')?.value || '';
             const trans = document.getElementById('hero-trans')?.value || '';
             let url = 'produits.html?';
-            if (type)  url += `type=${type}&`;
-            if (city)  url += `city=${encodeURIComponent(city)}&`;
+            if (type) url += `type=${type}&`;
+            if (city) url += `city=${encodeURIComponent(city)}&`;
             if (trans) url += `trans=${trans}&`;
             window.location.href = url;
         });
     }
-
-    // --- Featured grid (accueil) ---
     const featGrid = document.getElementById('featured-grid');
     if (featGrid && typeof PROPERTIES !== 'undefined') {
         const featured = PROPERTIES.filter(p => p.featured).slice(0, 6);
         featGrid.innerHTML = featured.map(createPropertyCard).join('');
     }
-
-    // --- Products grid (produits.html) ---
     const prodsGrid = document.getElementById('properties-grid');
     if (prodsGrid && typeof PROPERTIES !== 'undefined') {
         const params = new URLSearchParams(window.location.search);
-        const typeParam  = params.get('type');
+        const typeParam = params.get('type');
         const transParam2 = params.get('trans');
 
         if (typeParam) {
@@ -276,8 +246,6 @@ if (productsSection) {
         document.getElementById('sort-select')?.addEventListener('change', applyFilters);
         applyFilters();
     }
-
-    // --- Commande form ---
     const commandeForm = document.getElementById('commande-form');
     if (commandeForm && typeof PROPERTIES !== 'undefined') {
         const params = new URLSearchParams(window.location.search);
@@ -293,7 +261,7 @@ if (productsSection) {
         const session = typeof getSession === 'function' ? getSession() : null;
         if (session) {
             [['cmd-prenom', session.prenom], ['cmd-nom', session.nom],
-             ['cmd-email', session.email], ['cmd-tel', session.tel]].forEach(([id, val]) => {
+            ['cmd-email', session.email], ['cmd-tel', session.tel]].forEach(([id, val]) => {
                 const el = document.getElementById(id);
                 if (el && val) el.value = val;
             });
@@ -302,8 +270,6 @@ if (productsSection) {
         commandeForm.addEventListener('submit', handleCommande);
     }
 });
-
-// --- Commande submit ---
 function handleCommande(e) {
     e.preventDefault();
     const btn = document.getElementById('cmd-btn');
