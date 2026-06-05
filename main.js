@@ -33,51 +33,6 @@ function injectParticles(container, count) {
 
 // ========== TOUT LE RESTE ==========
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Bouton retour en haut ---
-const backToTop = document.createElement('button');
-backToTop.innerHTML = '↑';
-backToTop.title = 'Retour en haut';
-Object.assign(backToTop.style, {
-  position: 'fixed',
-  bottom: '30px',
-  right: '30px',
-  width: '46px',
-  height: '46px',
-  borderRadius: '50%',
-  background: 'var(--primary)',
-  color: '#fff',
-  border: 'none',
-  fontSize: '1.3rem',
-  cursor: 'pointer',
-  zIndex: '9999',
-  display: 'none',
-  alignItems: 'center',
-  justifyContent: 'center',
-  boxShadow: '0 0 20px rgba(139,92,246,0.6)',
-  transition: 'all 0.3s',
-});
-document.body.appendChild(backToTop);
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    backToTop.style.display = 'flex';
-  } else {
-    backToTop.style.display = 'none';
-  }
-});
-
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-backToTop.addEventListener('mouseover', () => {
-  backToTop.style.background = 'var(--accent)';
-  backToTop.style.transform = 'translateY(-3px)';
-});
-backToTop.addEventListener('mouseout', () => {
-  backToTop.style.background = 'var(--primary)';
-  backToTop.style.transform = 'translateY(0)';
-});
 // --- Particules ---
     const heroSection = document.querySelector('.hero');
     if (heroSection) injectParticles(heroSection, 60);
@@ -165,8 +120,8 @@ if (productsSection) {
     navLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             const text = this.textContent.trim().toLowerCase();
-            const isContentFolder = window.location.pathname.includes('content/');
-            const produitsPath = isContentFolder ? 'produits.html' : 'content/produits.html';
+            const isContentFolder = window.location.pathname.includes(' ');
+            const produitsPath = isContentFolder ? 'produits.html' : ' produits.html';
 
             navLinks.forEach(l => l.classList.remove('active'));
             this.classList.add('active');
@@ -236,7 +191,7 @@ if (productsSection) {
             const type  = document.getElementById('hero-type')?.value || '';
             const city  = document.getElementById('hero-city')?.value || '';
             const trans = document.getElementById('hero-trans')?.value || '';
-            let url = 'content/produits.html?';
+            let url = ' produits.html?';
             if (type)  url += `type=${type}&`;
             if (city)  url += `city=${encodeURIComponent(city)}&`;
             if (trans) url += `trans=${trans}&`;
