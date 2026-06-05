@@ -10,11 +10,9 @@
 </head>
 
 <body>
-
-    <!-- ========== NAVIGATION ========== -->
     <nav>
         <a href="index.html" class="nav-logo">
-           <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+            <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
             <span>ImmoPremier</span>
         </a>
 
@@ -24,15 +22,15 @@
             <li><a href="produits.html?trans=vente">Acheter</a></li>
             <li><a href="produits.html?trans=location">Louer</a></li>
             <li><a href="favoris.html" style="position:relative;">
-  Favoris ❤️
-  <span id="fav-count" style="
+                    Favoris ❤️
+                    <span id="fav-count" style="
     position:absolute; top:-6px; right:-6px;
     background:var(--accent); color:#fff;
     width:16px; height:16px; border-radius:50%;
     font-size:0.65rem; font-weight:700;
     display:flex; align-items:center; justify-content:center;
   ">0</span>
-</a></li>
+                </a></li>
             <li><a href="#contact">Contact</a></li>
             <li id="nav-auth"><a href="connexion.html" class="nav-cta">Se connecter</a></li>
         </ul>
@@ -41,32 +39,28 @@
             <span></span><span></span><span></span>
         </button>
     </nav>
-
-    <!-- ========== HERO ========== -->
     <section class="hero">
-  <div class="hero-content">
-    <div class="hero-badge">✨ N°1 de l'immobilier en Algérie</div>
-    <h1>Trouvez votre bien<br>idéal <span>au meilleur prix</span></h1>
-    <p>Appartements, villas, terrains à travers toute l'Algérie.<br>
-    Achetez ou louez facilement en quelques clics.</p>
-    <div class="hero-btns">
-      <a href="produits.html?trans=vente" class="btn-primary">🏠 Voir les propriétés</a>
-       <a href="commande.html" class="btn-outline">📅 Réserver une visite</a>
-    </div>
-  </div>
+        <div class="hero-content">
+            <div class="hero-badge">✨ N°1 de l'immobilier en Algérie</div>
+            <h1>Trouvez votre bien<br>idéal <span>au meilleur prix</span></h1>
+            <p>Appartements, villas, terrains à travers toute l'Algérie.<br>
+                Achetez ou louez facilement en quelques clics.</p>
+            <div class="hero-btns">
+                <a href="produits.html?trans=vente" class="btn-primary">🏠 Voir les propriétés</a>
+                <a href="commande.html" class="btn-outline">📅 Réserver une visite</a>
+            </div>
+        </div>
 
-  <div class="hero-visual">
-    <img src="bg2.jpg" alt="Immobilier Algérie" class="hero-img">
-    <div class="hero-card floating" style="bottom:30px;left:-20px;">
-      🏡 <strong>+40 propriétés</strong><br><small>disponibles maintenant</small>
-    </div>
-    <div class="hero-card floating" style="top:40px;right:-10px;">
-      ✅ <strong>Vente & Location</strong><br><small>partout en Algérie</small>
-    </div>
-  </div>
-</section>
-
-    <!-- ========== SEARCH BAR ========== -->
+        <div class="hero-visual">
+            <img src="bg2.jpg" alt="Immobilier Algérie" class="hero-img">
+            <div class="hero-card floating" style="bottom:30px;left:-20px;">
+                🏡 <strong>+40 propriétés</strong><br><small>disponibles maintenant</small>
+            </div>
+            <div class="hero-card floating" style="top:40px;right:-10px;">
+                ✅ <strong>Vente & Location</strong><br><small>partout en Algérie</small>
+            </div>
+        </div>
+    </section>
     <div class="search-section">
         <div class="search-bar">
             <select id="hero-trans" aria-label="Type de transaction">
@@ -87,52 +81,49 @@
             <button id="hero-search-btn">Rechercher</button>
         </div>
     </div>
-
-    <!-- ========== STATS ========== -->
     <div class="stats" style="position:relative; overflow:hidden;">
-    <div class="stat-item">
-        <div class="stat-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
-                <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
-                <path d="M9 21V12h6v9"/>
-            </svg>
+        <div class="stat-item">
+            <div class="stat-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                    <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z" />
+                    <path d="M9 21V12h6v9" />
+                </svg>
+            </div>
+            <div class="stat-num" data-count="1250" data-suffix="+">0</div>
+            <div class="stat-label">Propriétés disponibles</div>
         </div>
-        <div class="stat-num" data-count="1250" data-suffix="+">0</div>
-        <div class="stat-label">Propriétés disponibles</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-            </svg>
+        <div class="stat-item">
+            <div class="stat-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                    <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                    <circle cx="9" cy="7" r="4" />
+                    <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" />
+                </svg>
+            </div>
+            <div class="stat-num" data-count="8500" data-suffix="+">0</div>
+            <div class="stat-label">Clients satisfaits</div>
         </div>
-        <div class="stat-num" data-count="8500" data-suffix="+">0</div>
-        <div class="stat-label">Clients satisfaits</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
-                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
-                <circle cx="12" cy="9" r="2.5"/>
-            </svg>
+        <div class="stat-item">
+            <div class="stat-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                    <circle cx="12" cy="9" r="2.5" />
+                </svg>
+            </div>
+            <div class="stat-num" data-count="48">0</div>
+            <div class="stat-label">Wilayas couvertes</div>
         </div>
-        <div class="stat-num" data-count="48">0</div>
-        <div class="stat-label">Wilayas couvertes</div>
-    </div>
-    <div class="stat-item">
-        <div class="stat-icon-circle">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v6l4 2"/>
-            </svg>
+        <div class="stat-item">
+            <div class="stat-icon-circle">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="28" height="28">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 6v6l4 2" />
+                </svg>
+            </div>
+            <div class="stat-num" data-count="15" data-suffix=" ans">0</div>
+            <div class="stat-label">D'expérience</div>
         </div>
-        <div class="stat-num" data-count="15" data-suffix=" ans">0</div>
-        <div class="stat-label">D'expérience</div>
     </div>
-</div>
-    <!-- ========== FEATURED PROPERTIES ========== -->
     <section class="section">
         <div class="section-header">
             <span class="section-label">Sélection Exclusive</span>
@@ -149,7 +140,6 @@
         </div>
 
         <div class="properties-grid" id="featured-grid">
-            <!-- Filled by JS -->
         </div>
 
         <div style="text-align:center; margin-top:40px;">
@@ -158,8 +148,6 @@
             </a>
         </div>
     </section>
-
-    <!-- ========== WHY US ========== -->
     <section class="section" style="background:var(--bg);">
         <div class="section-header">
             <span class="section-label">Nos Avantages</span>
@@ -251,8 +239,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ========== TESTIMONIALS ========== -->
     <section class="section testimonials-bg">
         <div class="section-header">
             <span class="section-label">Avis Clients</span>
@@ -301,8 +287,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ========== CTA BANNER ========== -->
     <section class="section" style="background:var(--primary-light); text-align:center;">
         <h2 style="font-family:'Playfair Display',serif; font-size:2rem; color:var(--dark); margin-bottom:16px;">
             Vous avez un bien à vendre ou à louer ?
@@ -312,8 +296,6 @@
         </p>
         <a href=" inscription.html" class="btn-primary">Déposer une annonce gratuitement →</a>
     </section>
-
-    <!-- ========== CONTACT ========== -->
     <section class="section" id="contact">
         <div class="section-header">
             <span class="section-label">Contact</span>
@@ -342,8 +324,6 @@
             </div>
         </div>
     </section>
-
-    <!-- ========== FOOTER ========== -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
@@ -396,13 +376,10 @@
             <span>Développé avec ❤️ par l'équipe ImmoPremier</span>
         </div>
     </footer>
-
-    <!-- ========== SCRIPTS ========== -->
     <script src="produits.js"></script>
     <script src="auth.js"></script>
     <script src="main.js"></script>
     <script>
-        // Quick filter on homepage
         function filterHomeFeatured(filter, btn) {
             document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
