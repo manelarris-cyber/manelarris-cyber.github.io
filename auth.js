@@ -93,7 +93,7 @@ function handleLogin(e) {
     if (user) {
       setSession(user);
       showAlert('login-alert', `Bienvenue, ${user.prenom} ! Redirection...`, 'success');
-      setTimeout(() => { window.location.href = '../index.html'; }, 1500);
+      setTimeout(() => { window.location.href = 'index.html'; }, 1500);
     } else {
       showAlert('login-alert', 'Email ou mot de passe incorrect.', 'error');
       btn.disabled = false;
@@ -158,13 +158,13 @@ function handleRegister(e) {
     USERS.push(newUser);
     setSession(newUser);
     showAlert('register-alert', 'Compte créé avec succès ! Redirection...', 'success');
-    setTimeout(() => { window.location.href = '../index.html'; }, 1800);
+    setTimeout(() => { window.location.href = 'index.html'; }, 1800);
   }, 1000);
 }
 
 function logout() {
   clearSession();
-  window.location.href = window.location.pathname.includes(' ') ? '../index.html' : 'index.html';
+  window.location.href = window.location.pathname.includes('') ? 'index.html' : 'index.html';
 }
 
 function updateNavAuth() {
@@ -181,13 +181,13 @@ function updateNavAuth() {
         </button>
         <div class="user-dropdown" id="user-dropdown">
           <a href="#">👤 Mon profil</a>
-          <a href="${window.location.pathname.includes(' ') ? '' : ' '}produits.html">❤️ Mes favoris</a>
+          <a href="${window.location.pathname.includes('') ? '' : ''}produits.html">❤️ Mes favoris</a>
           <button class="logout-btn" onclick="logout()">🚪 Se déconnecter</button>
         </div>
       </div>
     `;
   } else {
-    const prefix = window.location.pathname.includes(' ') ? '' : ' ';
+    const prefix = window.location.pathname.includes('') ? '' : '';
     navAuth.innerHTML = `
       <a href="${prefix}connexion.html" class="nav-cta">Se connecter</a>
     `;
