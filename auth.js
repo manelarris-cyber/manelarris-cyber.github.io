@@ -1,9 +1,9 @@
 const USERS = [
-  { id: 1, nom: "Amine",    prenom: "Karim",   email: "admin@agenceimmo.dz",    motDePasse: "Admin@123",   role: "admin",  tel: "0550 123 456" },
-  { id: 2, nom: "Benali",   prenom: "Samira",  email: "samira@email.com",       motDePasse: "Samira@2024", role: "client", tel: "0661 234 567" },
-  { id: 3, nom: "Cherif",   prenom: "Youcef",  email: "youcef@email.com",       motDePasse: "Youcef@123",  role: "client", tel: "0770 345 678" },
-  { id: 4, nom: "Djebbar",  prenom: "Fatima",  email: "fatima@email.com",       motDePasse: "Fatima@456",  role: "client", tel: "0555 456 789" },
-  { id: 5, nom: "Essaïd",   prenom: "Rachid",  email: "rachid@agenceimmo.dz",   motDePasse: "Rachid@789",  role: "agent",  tel: "0660 567 890" }
+  { id: 1, nom: "Amine", prenom: "Karim", email: "admin@agenceimmo.dz", motDePasse: "Admin@123", role: "admin", tel: "0550 123 456" },
+  { id: 2, nom: "Benali", prenom: "Samira", email: "samira@email.com", motDePasse: "Samira@2024", role: "client", tel: "0661 234 567" },
+  { id: 3, nom: "Cherif", prenom: "Youcef", email: "youcef@email.com", motDePasse: "Youcef@123", role: "client", tel: "0770 345 678" },
+  { id: 4, nom: "Djebbar", prenom: "Fatima", email: "fatima@email.com", motDePasse: "Fatima@456", role: "client", tel: "0555 456 789" },
+  { id: 5, nom: "Essaïd", prenom: "Rachid", email: "rachid@agenceimmo.dz", motDePasse: "Rachid@789", role: "agent", tel: "0660 567 890" }
 ];
 const SESSION_KEY = 'immo_session';
 
@@ -22,22 +22,22 @@ function clearSession() {
 
 function isLoggedIn() { return getSession() !== null; }
 const REGEX = {
-  email:  /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/,
+  email: /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/,
   password: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&\-_#])[A-Za-z\d@$!%*?&\-_#]{8,}$/,
-  phone:    /^0[5-7]\d{8}$/,
-  nom:      /^[a-zA-ZÀ-ÿ\s'\-]{2,50}$/
+  phone: /^0[5-7]\d{8}$/,
+  nom: /^[a-zA-ZÀ-ÿ\s'\-]{2,50}$/
 };
 
 function validateField(field, value) {
   const v = value.trim();
   switch (field) {
-    case 'email':    return REGEX.email.test(v)    ? '' : 'Email invalide (ex: user@example.com)';
+    case 'email': return REGEX.email.test(v) ? '' : 'Email invalide (ex: user@example.com)';
     case 'password': return REGEX.password.test(v) ? '' : 'Min. 8 caractères, 1 majuscule, 1 chiffre, 1 caractère spécial';
-    case 'phone':    return v === '' || REGEX.phone.test(v) ? '' : 'Numéro invalide (ex: 0661234567)';
-    case 'nom':      return REGEX.nom.test(v)      ? '' : 'Nom invalide (2 à 50 caractères, lettres uniquement)';
-    case 'prenom':   return REGEX.nom.test(v)      ? '' : 'Prénom invalide';
-    case 'confirm':  return ''; 
-    default:         return '';
+    case 'phone': return v === '' || REGEX.phone.test(v) ? '' : 'Numéro invalide (ex: 0661234567)';
+    case 'nom': return REGEX.nom.test(v) ? '' : 'Nom invalide (2 à 50 caractères, lettres uniquement)';
+    case 'prenom': return REGEX.nom.test(v) ? '' : 'Prénom invalide';
+    case 'confirm': return '';
+    default: return '';
   }
 }
 function showError(fieldId, msg) {
@@ -74,7 +74,7 @@ function handleLogin(e) {
   hideAlert('login-alert');
 
   const email = document.getElementById('login-email').value.trim();
-  const pass  = document.getElementById('login-password').value;
+  const pass = document.getElementById('login-password').value;
   let valid = true;
   const emailErr = validateField('email', email);
   if (emailErr) { showError('login-email', emailErr); valid = false; } else clearError('login-email');
@@ -106,11 +106,11 @@ function handleRegister(e) {
   e.preventDefault();
   hideAlert('register-alert');
 
-  const prenom  = document.getElementById('reg-prenom').value;
-  const nom     = document.getElementById('reg-nom').value;
-  const email   = document.getElementById('reg-email').value;
-  const tel     = document.getElementById('reg-tel').value;
-  const pass    = document.getElementById('reg-password').value;
+  const prenom = document.getElementById('reg-prenom').value;
+  const nom = document.getElementById('reg-nom').value;
+  const email = document.getElementById('reg-email').value;
+  const tel = document.getElementById('reg-tel').value;
+  const pass = document.getElementById('reg-password').value;
   const confirm = document.getElementById('reg-confirm').value;
 
   let valid = true;
