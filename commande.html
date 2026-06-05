@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,10 +7,11 @@
   <title>Réservation de visite | ImmoPremier</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <nav>
     <a href="index.html" class="nav-logo">
-       <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
+      <img src="logo.png" alt="Logo ImmoPremier" class="custom-logo">
       <span>ImmoPremier</span>
     </a>
     <ul class="nav-links" id="nav-links">
@@ -17,15 +19,15 @@
       <li><a href="produits.html">Propriétés</a></li>
       <li id="nav-auth"><a href="connexion.html" class="nav-cta">Se connecter</a></li>
       <li><a href="favoris.html" style="position:relative;">
-  Favoris ❤️
-  <span id="fav-count" style="
+          Favoris ❤️
+          <span id="fav-count" style="
     position:absolute; top:-6px; right:-6px;
     background:var(--accent); color:#fff;
     width:16px; height:16px; border-radius:50%;
     font-size:0.65rem; font-weight:700;
     display:flex; align-items:center; justify-content:center;
   ">0</span>
-</a></li>
+        </a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -55,16 +57,13 @@
           <div class="form-row">
             <div class="form-group">
               <label for="cmd-prenom">Prénom *</label>
-              <input type="text" id="cmd-prenom" name="prenom"
-                placeholder="Votre prénom" required
+              <input type="text" id="cmd-prenom" name="prenom" placeholder="Votre prénom" required
                 data-validate="prenom">
               <div class="error-msg"></div>
             </div>
             <div class="form-group">
               <label for="cmd-nom">Nom *</label>
-              <input type="text" id="cmd-nom" name="nom"
-                placeholder="Votre nom" required
-                data-validate="nom">
+              <input type="text" id="cmd-nom" name="nom" placeholder="Votre nom" required data-validate="nom">
               <div class="error-msg"></div>
             </div>
           </div>
@@ -72,16 +71,13 @@
           <div class="form-row">
             <div class="form-group">
               <label for="cmd-email">Email *</label>
-              <input type="email" id="cmd-email" name="email"
-                placeholder="votre@email.com" required
+              <input type="email" id="cmd-email" name="email" placeholder="votre@email.com" required
                 data-validate="email">
               <div class="error-msg"></div>
             </div>
             <div class="form-group">
               <label for="cmd-tel">Téléphone *</label>
-              <input type="tel" id="cmd-tel" name="tel"
-                placeholder="0661 234 567" required
-                data-validate="phone">
+              <input type="tel" id="cmd-tel" name="tel" placeholder="0661 234 567" required data-validate="phone">
               <div class="error-msg"></div>
             </div>
           </div>
@@ -128,14 +124,15 @@
           <div class="form-group">
             <label for="cmd-message">Questions ou remarques</label>
             <textarea id="cmd-message" name="message" rows="4"
-              placeholder="Précisez vos questions ou besoins particuliers..."
-              style="resize:vertical;"></textarea>
+              placeholder="Précisez vos questions ou besoins particuliers..." style="resize:vertical;"></textarea>
           </div>
 
           <div style="display:flex; align-items:flex-start; gap:8px; margin-bottom:16px;">
-            <input type="checkbox" id="cmd-terms" style="accent-color:var(--primary); width:15px; height:15px; margin-top:2px;" required>
+            <input type="checkbox" id="cmd-terms"
+              style="accent-color:var(--primary); width:15px; height:15px; margin-top:2px;" required>
             <label for="cmd-terms" style="font-size:0.83rem; color:var(--muted); cursor:pointer; line-height:1.4;">
-              J'accepte d'être contacté par l'agence concernant cette demande et je confirme l'exactitude des informations fournies.
+              J'accepte d'être contacté par l'agence concernant cette demande et je confirme l'exactitude des
+              informations fournies.
             </label>
           </div>
 
@@ -144,8 +141,7 @@
           </button>
 
         </form>
-        <div id="cmd-success" style="display:none;"
-          class="commande-form-card"
+        <div id="cmd-success" style="display:none;" class="commande-form-card"
           style="text-align:center; padding:60px 40px;">
           <div style="font-size:4rem; margin-bottom:20px;">🎉</div>
           <h2 style="font-family:'Playfair Display',serif; font-size:1.8rem; color:var(--dark); margin-bottom:12px;">
@@ -168,7 +164,8 @@
       </div>
       <aside>
         <div class="commande-summary">
-          <h3 style="font-size:1rem; font-weight:700; color:var(--dark); margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--bg);">
+          <h3
+            style="font-size:1rem; font-weight:700; color:var(--dark); margin-bottom:20px; padding-bottom:12px; border-bottom:2px solid var(--bg);">
             📋 Récapitulatif
           </h3>
           <div class="summary-item">
@@ -189,16 +186,19 @@
           </div>
 
           <div style="background:var(--primary-light); border-radius:var(--radius); padding:16px; margin-top:20px;">
-            <p style="font-size:0.83rem; color:var(--primary); font-weight:600; margin-bottom:8px;">✅ Visites gratuites</p>
+            <p style="font-size:0.83rem; color:var(--primary); font-weight:600; margin-bottom:8px;">✅ Visites gratuites
+            </p>
             <p style="font-size:0.82rem; color:var(--text); line-height:1.5;">
-              La réservation d'une visite est entièrement gratuite et sans engagement. Annulation possible jusqu'à 24h avant.
+              La réservation d'une visite est entièrement gratuite et sans engagement. Annulation possible jusqu'à 24h
+              avant.
             </p>
           </div>
 
           <div style="margin-top:20px; padding:16px; border:1px solid var(--border); border-radius:var(--radius);">
             <p style="font-size:0.83rem; font-weight:600; color:var(--dark); margin-bottom:8px;">📞 Besoin d'aide ?</p>
             <p style="font-size:0.82rem; color:var(--muted);">Appelez-nous directement :</p>
-            <a href="tel:+213550123456" style="display:block; font-weight:700; color:var(--primary); font-size:0.95rem; margin-top:4px; text-decoration:none;">
+            <a href="tel:+213550123456"
+              style="display:block; font-weight:700; color:var(--primary); font-size:0.95rem; margin-top:4px; text-decoration:none;">
               +213 550 123 456
             </a>
           </div>
@@ -224,14 +224,14 @@
         dateInput.min = today;
       }
     });
-    document.getElementById('commande-form').addEventListener('submit', function(e) {
+    document.getElementById('commande-form').addEventListener('submit', function (e) {
       e.preventDefault();
       let valid = true;
       const fields = [
         { id: 'cmd-prenom', rule: 'prenom' },
-        { id: 'cmd-nom',    rule: 'nom' },
-        { id: 'cmd-email',  rule: 'email' },
-        { id: 'cmd-tel',    rule: 'phone' }
+        { id: 'cmd-nom', rule: 'nom' },
+        { id: 'cmd-email', rule: 'email' },
+        { id: 'cmd-tel', rule: 'phone' }
       ];
 
       fields.forEach(f => {
@@ -262,5 +262,184 @@
       if (valid) handleCommande(e);
     }, { capture: true });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('commande-form');
+      const confirmBtn = document.getElementById('cmd-btn');
+
+      function isFormCompletelyValid() {
+        let allValid = true;
+
+        const fields = [
+          { id: 'cmd-prenom', rule: 'prenom', name: 'Prénom' },
+          { id: 'cmd-nom', rule: 'nom', name: 'Nom' },
+          { id: 'cmd-email', rule: 'email', name: 'Email' },
+          { id: 'cmd-tel', rule: 'phone', name: 'Téléphone' }
+        ];
+
+        fields.forEach(f => {
+          const el = document.getElementById(f.id);
+          const value = el?.value.trim() || '';
+          const error = validateField(f.rule, value);
+          if (error || value === '') {
+            allValid = false;
+            if (value === '') showError(f.id, `${f.name} est requis`);
+            else if (error) showError(f.id, error);
+          } else {
+            clearError(f.id);
+          }
+        });
+
+        const date = document.getElementById('cmd-date')?.value;
+        if (!date) {
+          showError('cmd-date', 'Veuillez sélectionner une date');
+          allValid = false;
+        } else {
+          const selectedDate = new Date(date);
+          const today = new Date();
+          today.setHours(0, 0, 0, 0);
+          if (selectedDate < today) {
+            showError('cmd-date', 'La date ne peut pas être dans le passé');
+            allValid = false;
+          } else {
+            clearError('cmd-date');
+          }
+        }
+
+        const heure = document.getElementById('cmd-heure')?.value;
+        if (!heure) {
+          showError('cmd-heure', 'Veuillez sélectionner une heure');
+          allValid = false;
+        } else {
+          clearError('cmd-heure');
+        }
+
+        const motif = document.getElementById('cmd-motif')?.value;
+        if (!motif) {
+          showError('cmd-motif', 'Veuillez sélectionner un type de demande');
+          allValid = false;
+        } else {
+          clearError('cmd-motif');
+        }
+
+        const terms = document.getElementById('cmd-terms');
+        if (!terms?.checked) {
+          const termsLabel = document.querySelector('label[for="cmd-terms"]');
+          if (termsLabel) {
+            termsLabel.style.color = '#ef4444';
+            setTimeout(() => {
+              if (termsLabel) termsLabel.style.color = '';
+            }, 2000);
+          }
+          allValid = false;
+        }
+
+        return allValid;
+      }
+
+      const originalHandleCommande = window.handleCommande;
+
+      window.handleCommande = function (e) {
+        if (e) e.preventDefault();
+        if (!isFormCompletelyValid()) {
+          let errorDiv = document.getElementById('global-form-error');
+          if (!errorDiv) {
+            errorDiv = document.createElement('div');
+            errorDiv.id = 'global-form-error';
+            errorDiv.style.cssText = `
+                    background: rgba(239, 68, 68, 0.15);
+                    border: 1px solid #ef4444;
+                    border-radius: 12px;
+                    padding: 12px 16px;
+                    margin-bottom: 20px;
+                    color: #ef4444;
+                    font-size: 0.85rem;
+                    text-align: center;
+                `;
+            const form = document.getElementById('commande-form');
+            if (form && form.firstChild) {
+              form.insertBefore(errorDiv, form.firstChild);
+            }
+          }
+          errorDiv.innerHTML = '! Veuillez remplir correctement tous les champs obligatoires (en rouge) et accepter les conditions.';
+          errorDiv.style.display = 'block';
+
+          const firstError = document.querySelector('.has-error');
+          if (firstError) {
+            firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+
+          return false;
+        }
+
+        const globalError = document.getElementById('global-form-error');
+        if (globalError) globalError.style.display = 'none';
+
+        const btn = document.getElementById('cmd-btn');
+        btn.disabled = true;
+        btn.innerHTML = '<span class="spinner"></span> Envoi...';
+
+        setTimeout(() => {
+          const name = document.getElementById('cmd-prenom')?.value + ' ' + document.getElementById('cmd-nom')?.value;
+          document.getElementById('commande-form').style.display = 'none';
+          const success = document.getElementById('cmd-success');
+          if (success) {
+            success.style.display = 'block';
+            document.getElementById('success-name').textContent = name;
+          }
+          const reservations = JSON.parse(localStorage.getItem('immo_reservations') || '[]');
+          reservations.push({
+            date: new Date().toISOString(),
+            name: name,
+            email: document.getElementById('cmd-email')?.value,
+            tel: document.getElementById('cmd-tel')?.value,
+            dateVisite: document.getElementById('cmd-date')?.value,
+            heureVisite: document.getElementById('cmd-heure')?.value,
+            propId: new URLSearchParams(window.location.search).get('id')
+          });
+          localStorage.setItem('immo_reservations', JSON.stringify(reservations));
+        }, 1500);
+
+        return true;
+      };
+
+      if (form) {
+        const newForm = form.cloneNode(true);
+        form.parentNode.replaceChild(newForm, form);
+        newForm.id = 'commande-form';
+
+        newForm.addEventListener('submit', function (e) {
+          e.preventDefault();
+          window.handleCommande(e);
+        });
+      }
+
+      const realTimeFields = ['cmd-prenom', 'cmd-nom', 'cmd-email', 'cmd-tel', 'cmd-date', 'cmd-heure', 'cmd-motif'];
+      realTimeFields.forEach(fieldId => {
+        const field = document.getElementById(fieldId);
+        if (field) {
+          field.addEventListener('change', function () {
+            const globalError = document.getElementById('global-form-error');
+            if (globalError) globalError.style.display = 'none';
+
+            if (fieldId === 'cmd-date') {
+              const date = field.value;
+              if (date) {
+                const selectedDate = new Date(date);
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
+                if (selectedDate < today) {
+                  showError(fieldId, 'La date ne peut pas être dans le passé');
+                } else {
+                  clearError(fieldId);
+                }
+              }
+            }
+          });
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
