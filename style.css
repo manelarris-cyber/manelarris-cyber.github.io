@@ -214,7 +214,7 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('content/bg2.jfif') center/cover no-repeat;
+  background: url('  bg2.jfif') center/cover no-repeat;
   opacity: 0.18;
 }
 
@@ -1118,7 +1118,7 @@ footer {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('../content/ai2.png') center/cover;
+  background: url('  ai2.png') center/cover;
   opacity: 0.15;
 }
 .page-header h1 {
