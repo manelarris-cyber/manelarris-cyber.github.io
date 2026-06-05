@@ -1,114 +1,164 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
 :root {
-  --primary:        #c9a84c;
-  --primary-dark:   #a8872e;
-  --primary-light:  rgba(201,168,76,0.18);
-  --accent:         #e3bf6a;
-  --bg:             #111111;
-  --white:          #FFFFFF;
-  --dark:           #F8F5EE;
-  --text:           #E8E0D0;
-  --muted:          #9E9070;
-  --border:         rgba(201,168,76,0.35);
-  --shadow:         0 0 10px rgba(201,168,76,0.25);
-  --shadow-hover:   0 0 22px rgba(227,191,106,0.55);
-  --radius:         12px;
-  --radius-lg:      20px;
-  --transition:     all 0.3s cubic-bezier(0.4,0,0.2,1);
+  --primary: #c9a84c;
+  --primary-dark: #a8872e;
+  --primary-light: rgba(201, 168, 76, 0.18);
+  --accent: #e3bf6a;
+  --bg: #111111;
+  --white: #FFFFFF;
+  --dark: #F8F5EE;
+  --text: #E8E0D0;
+  --muted: #9E9070;
+  --border: rgba(201, 168, 76, 0.35);
+  --shadow: 0 0 10px rgba(201, 168, 76, 0.25);
+  --shadow-hover: 0 0 22px rgba(227, 191, 106, 0.55);
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 nav {
-  background: rgba(17,17,17,0.92);
-  box-shadow: 0 2px 15px rgba(201,168,76,0.35);
-  border-bottom: 1px solid rgba(201,168,76,0.3);
+  background: rgba(17, 17, 17, 0.92);
+  box-shadow: 0 2px 15px rgba(201, 168, 76, 0.35);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
 }
+
 .hero {
-  background: linear-gradient(135deg,#111111 0%,rgba(201,168,76,0.10) 100%);
+  background: linear-gradient(135deg, #111111 0%, rgba(201, 168, 76, 0.10) 100%);
 }
+
 .hero::before {
-  background: radial-gradient(ellipse at 70% 50%,rgba(201,168,76,0.15) 0%,transparent 60%);
+  background: radial-gradient(ellipse at 70% 50%, rgba(201, 168, 76, 0.15) 0%, transparent 60%);
 }
-.nav-logo .logo-icon { background:#c9a84c; box-shadow:0 0 10px #c9a84c; }
-.custom-logo { filter:drop-shadow(0 0 10px #c9a84c); }
-.nav-logo:hover .custom-logo { filter:drop-shadow(0 0 14px #e3bf6a); }
-.hero-img { box-shadow:0 0 60px rgba(201,168,76,0.35); border:1px solid rgba(201,168,76,0.3); }
-.hero-card { background:rgba(17,17,17,0.92); border:1px solid rgba(201,168,76,0.45); box-shadow:0 0 20px rgba(201,168,76,0.2); }
-.stats { background:#1a1400; border-top:1px solid rgba(201,168,76,0.3); border-bottom:1px solid rgba(201,168,76,0.3); }
-.testimonials-bg { background:#1a1400; }
-.testimonials-bg .section-label { color:#c9a84c; }
-.page-header { background:linear-gradient(135deg,#1a1400 0%,rgba(201,168,76,0.7) 100%); }
-.auth-page { background:linear-gradient(135deg,#111111 0%,#1a1400 60%,#2a2000 100%); }
-.auth-logo .logo-circle { background:#c9a84c; }
-.btn-primary { box-shadow:0 0 15px rgba(201,168,76,0.5); }
-.btn-primary:hover { background:#e3bf6a; box-shadow:0 0 25px rgba(227,191,106,0.7); }
-.btn-full:hover { background:#a8872e; }
-.property-card::before,.why-card::before,.agent-card::before {
-  background:radial-gradient(600px circle at var(--mouse-x,0) var(--mouse-y,0),rgba(201,168,76,0.13),transparent 40%);
-}
-.card-price { color:#c9a84c; text-shadow:0 0 12px rgba(201,168,76,0.5); }
-.card-badge.location { background:linear-gradient(110deg,#c9a84c 0%,#fff 45%,#c9a84c 55%,#c9a84c 100%); background-size:250% 100%; color:#1a0e00; }
-footer { border-top:1px solid rgba(201,168,76,0.25); }
-.footer-social a:hover { background:#c9a84c; }
-/* ============================================================
-   CORRECTIF THÈME NOIR & OR — ImmoPremier
-   Copiez ces règles APRÈS votre CSS existant (ou dans un
-   fichier séparé chargé en dernier) pour écraser les
-   couleurs violettes/bleues résiduelles.
-   ============================================================ */
 
-/* ── 1. HERO ──────────────────────────────────────────────── */
+.nav-logo .logo-icon {
+  background: #c9a84c;
+  box-shadow: 0 0 10px #c9a84c;
+}
+
+.custom-logo {
+  filter: drop-shadow(0 0 10px #c9a84c);
+}
+
+.nav-logo:hover .custom-logo {
+  filter: drop-shadow(0 0 14px #e3bf6a);
+}
+
+.hero-img {
+  box-shadow: 0 0 60px rgba(201, 168, 76, 0.35);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.hero-card {
+  background: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(201, 168, 76, 0.45);
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+}
+
+.stats {
+  background: #1a1400;
+  border-top: 1px solid rgba(201, 168, 76, 0.3);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.3);
+}
+
+.testimonials-bg {
+  background: #1a1400;
+}
+
+.testimonials-bg .section-label {
+  color: #c9a84c;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #1a1400 0%, rgba(201, 168, 76, 0.7) 100%);
+}
+
+.auth-page {
+  background: linear-gradient(135deg, #111111 0%, #1a1400 60%, #2a2000 100%);
+}
+
+.auth-logo .logo-circle {
+  background: #c9a84c;
+}
+
+.btn-primary {
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.5);
+}
+
+.btn-primary:hover {
+  background: #e3bf6a;
+  box-shadow: 0 0 25px rgba(227, 191, 106, 0.7);
+}
+
+.btn-full:hover {
+  background: #a8872e;
+}
+
+.property-card::before,
+.why-card::before,
+.agent-card::before {
+  background: radial-gradient(600px circle at var(--mouse-x, 0) var(--mouse-y, 0), rgba(201, 168, 76, 0.13), transparent 40%);
+}
+
+.card-price {
+  color: #c9a84c;
+  text-shadow: 0 0 12px rgba(201, 168, 76, 0.5);
+}
+
+.card-badge.location {
+  background: linear-gradient(110deg, #c9a84c 0%, #fff 45%, #c9a84c 55%, #c9a84c 100%);
+  background-size: 250% 100%;
+  color: #1a0e00;
+}
+
+footer {
+  border-top: 1px solid rgba(201, 168, 76, 0.25);
+}
+
+.footer-social a:hover {
+  background: #c9a84c;
+}
+
 .hero {
-  background: linear-gradient(
-    135deg,
-    #111111 0%,
-    rgba(201, 168, 76, 0.12) 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      #111111 0%,
+      rgba(201, 168, 76, 0.12) 100%) !important;
 }
 
-/* Lueur radiale dorée au lieu de la violette */
 .hero::before {
   background:
     url('content/bg2.jfif') center / cover no-repeat,
-    radial-gradient(
-      ellipse at 70% 50%,
+    radial-gradient(ellipse at 70% 50%,
       rgba(201, 168, 76, 0.18) 0%,
-      transparent 60%
-    ) !important;
+      transparent 60%) !important;
   opacity: 0.18 !important;
 }
 
-/* ── 2. PAGE-HEADER (bannière "Nos Propriétés", etc.) ──────── */
 .page-header {
-  background: linear-gradient(
-    135deg,
-    #1a1400 0%,
-    rgba(201, 168, 76, 0.55) 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      #1a1400 0%,
+      rgba(201, 168, 76, 0.55) 100%) !important;
 }
 
-/* Image de fond + particules dorées déjà présents → on garde */
 .page-header::before {
   background: url('ai2.png') center / cover !important;
   opacity: 0.15 !important;
 }
 
-/* ── 3. NAVBAR ────────────────────────────────────────────── */
 nav {
   background: rgba(17, 17, 17, 0.92) !important;
   box-shadow: 0 2px 15px rgba(201, 168, 76, 0.35) !important;
   border-bottom: 1px solid rgba(201, 168, 76, 0.30) !important;
 }
 
-/* ── 4. AUTH PAGE ─────────────────────────────────────────── */
 .auth-page {
-  background: linear-gradient(
-    135deg,
-    #111111 0%,
-    #1a1400 60%,
-    #2a2000 100%
-  ) !important;
+  background: linear-gradient(135deg,
+      #111111 0%,
+      #1a1400 60%,
+      #2a2000 100%) !important;
 }
 
-/* ── 5. BOUTON PRIMAIRE ───────────────────────────────────── */
 .btn-primary {
   box-shadow: 0 0 15px rgba(201, 168, 76, 0.50) !important;
 }
@@ -118,7 +168,6 @@ nav {
   box-shadow: 0 0 25px rgba(227, 191, 106, 0.70) !important;
 }
 
-/* ── 6. SEARCH-BAR focus ─────────────────────────────────── */
 .search-bar:focus-within {
   border-color: var(--accent) !important;
   box-shadow:
@@ -126,7 +175,6 @@ nav {
     inset 0 0 5px rgba(201, 168, 76, 0.20) !important;
 }
 
-/* ── 7. FORM INPUTS focus ────────────────────────────────── */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -136,14 +184,12 @@ nav {
     inset 0 0 5px rgba(201, 168, 76, 0.20) !important;
 }
 
-/* ── 8. STATS BAND ───────────────────────────────────────── */
 .stats {
   background: #1a1400 !important;
   border-top: 1px solid rgba(201, 168, 76, 0.30) !important;
   border-bottom: 1px solid rgba(201, 168, 76, 0.30) !important;
 }
 
-/* ── 9. TESTIMONIALS ─────────────────────────────────────── */
 .testimonials-bg {
   background: #1a1400 !important;
 }
@@ -152,7 +198,6 @@ nav {
   color: #c9a84c !important;
 }
 
-/* ── 10. HERO IMAGE — bordure & lueur dorées ─────────────── */
 .hero-img {
   border: 1px solid rgba(201, 168, 76, 0.45) !important;
   box-shadow:
@@ -160,7 +205,6 @@ nav {
     0 0 80px rgba(201, 168, 76, 0.15) !important;
 }
 
-/* ── 11. HERO CARDS flottantes — fond sombre + bordure or ── */
 .hero-card {
   background: rgba(17, 17, 17, 0.92) !important;
   border: 1px solid rgba(201, 168, 76, 0.50) !important;
@@ -168,18 +212,17 @@ nav {
   color: #fff !important;
 }
 
-/* Icône ✅ et texte en or dans les cartes */
 .hero-card strong,
 .hero-card b {
   color: #c9a84c !important;
 }
 
-/* ── 13. MOBILE NAV (hamburger ouvert) ───────────────────── */
 @media (max-width: 768px) {
   .nav-links.open {
     background: #1a1400 !important;
   }
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -197,7 +240,6 @@ body {
   line-height: 1.6;
 }
 
-/* Fix particules - pas d'espace vide */
 body {
   overflow-x: hidden;
   min-height: unset !important;
@@ -299,7 +341,7 @@ nav {
 
 .hero {
   min-height: 88vh;
-  background: linear-gradient(135deg, #0F0F1A 0%, rgba(139,92,246,0.15) 100%);
+  background: linear-gradient(135deg, #0F0F1A 0%, rgba(139, 92, 246, 0.15) 100%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -313,7 +355,7 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at 70% 50%, rgba(139,92,246,0.2) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 70% 50%, rgba(139, 92, 246, 0.2) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -337,20 +379,20 @@ nav {
   height: 420px;
   object-fit: cover;
   border-radius: 24px;
-  box-shadow: 0 0 60px rgba(139,92,246,0.4);
-  border: 1px solid rgba(139,92,246,0.3);
+  box-shadow: 0 0 60px rgba(139, 92, 246, 0.4);
+  border: 1px solid rgba(139, 92, 246, 0.3);
 }
 
 .hero-card {
   position: absolute;
-  background: rgba(15,15,26,0.9);
-  border: 1px solid rgba(139,92,246,0.5);
+  background: rgba(15, 15, 26, 0.9);
+  border: 1px solid rgba(139, 92, 246, 0.5);
   backdrop-filter: blur(12px);
   padding: 12px 18px;
   border-radius: 14px;
   font-size: 0.82rem;
   color: #fff;
-  box-shadow: 0 0 20px rgba(139,92,246,0.3);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
   line-height: 1.5;
 }
 
@@ -363,14 +405,30 @@ nav {
 }
 
 @keyframes floatCard {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 @media (max-width: 1024px) {
-  .hero-visual { display: none; }
-  .hero { justify-content: center; text-align: center; }
-  .hero-btns { justify-content: center; }
+  .hero-visual {
+    display: none;
+  }
+
+  .hero {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-btns {
+    justify-content: center;
+  }
 }
 
 .hero::before {
@@ -415,14 +473,14 @@ nav {
 
 .hero h1 span {
   color: #FFD700;
-   font-weight: 800;
+  font-weight: 800;
 }
 
 .hero p {
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
   font-weight: 300;
-  color: rgba(255,255,255,0.75);
+  color: rgba(255, 255, 255, 0.75);
   letter-spacing: 0.2px;
   line-height: 1.8;
   font-size: 1.1rem;
@@ -496,13 +554,13 @@ nav {
   gap: 12px;
   max-width: 900px;
   margin: 0 auto;
-  background: rgba(0, 0, 0, 0.4) !important;
   border-radius: var(--radius-lg);
   padding: 12px;
   border: 1px solid var(--border) !important;
   transition: var(--transition);
   color: var(--white) !important;
   box-shadow: inset 0 0 5px rgba(139, 92, 246, 0.2);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 .search-bar:focus-within {
@@ -522,6 +580,22 @@ nav {
   outline: none;
 }
 
+.search-bar select option {
+  background-color: #c9a84c !important;
+  color: #1a1a2e !important;
+  padding: 10px;
+}
+
+.search-bar select option:hover {
+  background-color: #daa520 !important;
+  color: #1a1a2e !important;
+}
+
+.search-bar select option:checked {
+  background-color: #b8860b !important;
+  color: #2a2000 !important;
+}
+
 .search-bar button {
   background: var(--primary);
   color: var(--white);
@@ -535,7 +609,7 @@ nav {
 }
 
 .search-bar button:hover {
-  background: var(--primary-dark);
+  background-color: #1a1a2e;
 }
 
 .section {
@@ -612,7 +686,7 @@ nav {
   box-shadow: var(--shadow);
   transition: var(--transition);
   cursor: pointer;
-  
+
 }
 
 .property-card:hover {
@@ -650,13 +724,11 @@ nav {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-   background: linear-gradient(
-    110deg,
-    lightgreen 0%,
-    #fff 45%,
-    lightgreen 55%,
-    lightgreen 100%
-  );
+  background: linear-gradient(110deg,
+      lightgreen 0%,
+      #fff 45%,
+      lightgreen 55%,
+      lightgreen 100%);
   background-size: 250% 100%;
   animation: shine 2s linear infinite;
 }
@@ -668,19 +740,27 @@ nav {
 }
 
 .card-badge.location {
-  background: linear-gradient(110deg, #c9a84c, #ffffff 45%,#c9a84c 55%,#c9a84c 100%);
+  background: linear-gradient(110deg, #c9a84c, #ffffff 45%, #c9a84c 55%, #c9a84c 100%);
   background-size: 250% 100%;
   animation: shine 2s linear infinite;
 }
+
 .card-badge.neuf {
-background: linear-gradient(110deg, #e3bf6a 0%, #ffffff 45%, #e3bf6a 55%, #e3bf6a 100%);
+  background: linear-gradient(110deg, #e3bf6a 0%, #ffffff 45%, #e3bf6a 55%, #e3bf6a 100%);
   background-size: 250% 100%;
   animation: shine 2s linear infinite;
 }
+
 @keyframes shine {
-  0%   { background-position: 200% center; }
-  100% { background-position: -200% center; }
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
 }
+
 .card-fav {
   position: absolute;
   top: 14px;
@@ -708,32 +788,36 @@ background: linear-gradient(110deg, #e3bf6a 0%, #ffffff 45%, #e3bf6a 55%, #e3bf6
 
 .card-price {
   color: #c9a84c !important;
-  background: linear-gradient(
-    90deg,
-    #a8872e 0%,
-    #ffffff 40%,
-    #c9a84c 55%,
-    #a8872e 100%
-  );
+  background: linear-gradient(90deg,
+      #a8872e 0%,
+      #ffffff 40%,
+      #c9a84c 55%,
+      #a8872e 100%);
   background-size: 250% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: priceShine 3s linear infinite;
   text-shadow: none !important;
-  font-weight: 800 !important;}
-  @keyframes priceShine {
-  0%   { background-position: 200% center; }
-  100% { background-position: -200% center; }
+  font-weight: 800 !important;
 }
- 
-/* ── 15. MOBILE NAV (hamburger ouvert) ───────────────────── */
+
+@keyframes priceShine {
+  0% {
+    background-position: 200% center;
+  }
+
+  100% {
+    background-position: -200% center;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-links.open {
     background: #1a1400 !important;
   }
 }
- 
+
 
 .card-title {
   font-size: 1rem;
@@ -1123,7 +1207,7 @@ footer {
 }
 
 .auth-logo h2 {
-   font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--white);
@@ -1131,7 +1215,7 @@ footer {
 }
 
 .auth-logo p {
-  color: rgba(255,255,255,0.65);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 0.88rem;
   margin-top: 4px;
 }
@@ -1277,26 +1361,26 @@ footer {
 .alert.show {
   display: flex;
 }
+
 .page-header {
-    position: relative;
-    overflow: hidden;
-    padding: 80px 5%;
-    min-height: 250px;
+  position: relative;
+  overflow: hidden;
+  padding: 80px 5%;
+  min-height: 250px;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    background: linear-gradient(
-        135deg,
-        #1e3a8a 0%,
-        rgba(139,92,246,0.8) 100%
-    );
+  background: linear-gradient(135deg,
+      #1e3a8a 0%,
+      rgba(139, 92, 246, 0.8) 100%);
 }
 
-.page-header-content{
-    position: relative;
-    z-index: 2;
+.page-header-content {
+  position: relative;
+  z-index: 2;
 }
+
 .page-header::before {
   content: '';
   position: absolute;
@@ -1304,6 +1388,7 @@ footer {
   background: url('ai2.png') center/cover;
   opacity: 0.15;
 }
+
 .page-header h1 {
   font-family: 'Playfair Display', serif;
   font-size: clamp(2rem, 4vw, 3rem);
@@ -1586,7 +1671,6 @@ footer {
 
 .contact-card {
   background: rgba(255, 255, 255, 0.03) !important;
-  /* Corrige le fond blanc de votre image */
   backdrop-filter: blur(12px);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -1602,7 +1686,6 @@ footer {
   border-color: var(--accent);
 }
 
-/* Force le texte en blanc à l'intérieur des cartes */
 .contact-card h3,
 .contact-card h4,
 .contact-card p,
@@ -1611,7 +1694,6 @@ footer {
   color: var(--white) !important;
 }
 
-/* --- STYLE DES ICÔNES FONTAWESOME DANS LES CARTES --- */
 .contact-card i {
   font-size: 2.8rem;
   color: var(--accent);
@@ -1687,6 +1769,7 @@ footer {
   transform: translateX(120%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .toast.show {
   transform: translateX(0);
 }
@@ -1842,7 +1925,7 @@ footer {
 .agent-card {
   position: relative;
   overflow: hidden;
-   z-index: 2;
+  z-index: 2;
 }
 
 .property-card::before,
@@ -1922,12 +2005,12 @@ body.page-leaving {
 }
 
 .custom-logo-large {
- width: 80px;
+  width: 80px;
   height: 80px;
   object-fit: contain;
   margin: 0 auto 12px auto;
   display: block;
-  filter: drop-shadow(0 0 20px rgba(139, 92, 246, 0.8));
+  filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.6));
   animation: pulse 2s infinite ease-in-out;
 }
 
@@ -1953,23 +2036,27 @@ body.page-leaving {
   box-shadow: 0 0 35px rgba(255, 215, 0, 0.6), inset 0 0 20px rgba(255, 215, 0, 0.1);
   transform: scale(1.1);
 }
-.page-header{
-    position: relative;
-    overflow: hidden;
+
+.page-header {
+  position: relative;
+  overflow: hidden;
 }
 
-.page-header-content{
-    position: relative;
-    z-index: 2;
+.page-header-content {
+  position: relative;
+  z-index: 2;
 }
+
 .testimonial-card,
 .contact-card {
   position: relative;
-  z-index: 2;  /* ← AJOUTER */
+  z-index: 2;/
 }
+
 body.modal-open {
   overflow: hidden;
 }
+
 #prop-modal {
   position: fixed !important;
   z-index: 2147483647 !important;
