@@ -248,7 +248,7 @@ const PROPERTIES = [
     bathrooms: 2,
     floor: 6,
     description: "Grand appartement avec magnifique vue sur le massif du Djurdjura, balcon filant, parking et cave inclus.",
-image: "id14.jpg",
+    image: "id14.jpg",
     featured: false,
     new: false
   },
@@ -610,7 +610,7 @@ image: "id14.jpg",
     bathrooms: 1,
     floor: 2,
     description: "Appartement neuf jamais habité, cuisine équipée, revêtements modernes, résidence calme avec interphone.",
-      image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80", 
+    image: "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=600&q=80",
     featured: false,
     new: true
   },
@@ -763,8 +763,6 @@ function createPropertyCard(prop) {
     </div>
   `;
 }
-
-// ---- Favoris ----
 function getFavs() {
   try { return JSON.parse(localStorage.getItem('immo_favs') || '[]'); } catch { return []; }
 }
@@ -782,8 +780,6 @@ function toggleFav(id, btn) {
     showToast('Retiré des favoris', 'error');
   }
   localStorage.setItem('immo_favs', JSON.stringify(favs));
-
-  // ← ajouter ça
   const favCount = document.getElementById('fav-count');
   if (favCount) favCount.textContent = getFavs().length;
   updateFavCount(); //
@@ -984,7 +980,6 @@ function updatePriceDisplay() {
     display.textContent = parseInt(val).toLocaleString('fr-DZ') + ' DA';
   }
 }
-// Initialisation au chargement de la page
 document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('DOMContentLoaded', () => {
     const favCount = document.getElementById('fav-count');
@@ -999,15 +994,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const el = document.getElementById('filter-transaction');
     if (el) el.value = trans;
   }
-
-  // Afficher le prix initial
   updatePriceDisplay();
 
-  // Mettre à jour le prix en temps réel
   const priceEl = document.getElementById('filter-price');
   if (priceEl) priceEl.addEventListener('input', updatePriceDisplay);
 
-  // Render initial
   applyFilters();
 });
 function updateFavCount() {
