@@ -1,22 +1,185 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
 :root {
-  --primary: #8B5CF6;
-  --primary-dark: #7C3AED;
-  --primary-light: rgba(139, 92, 246, 0.2);
-  --accent: #EC4899;
-  --bg: #0F0F1A;
-  --white: #FFFFFF;
-  --dark: #F8FAFC;
-  --text: #E2E8F0;
-  --muted: #94A3B8;
-  --border: rgba(139, 92, 246, 0.4);
-  --shadow: 0 0 10px rgba(139, 92, 246, 0.3);
-  --shadow-hover: 0 0 20px rgba(236, 72, 153, 0.6);
-  --radius: 12px;
-  --radius-lg: 20px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --primary:        #c9a84c;
+  --primary-dark:   #a8872e;
+  --primary-light:  rgba(201,168,76,0.18);
+  --accent:         #e3bf6a;
+  --bg:             #111111;
+  --white:          #FFFFFF;
+  --dark:           #F8F5EE;
+  --text:           #E8E0D0;
+  --muted:          #9E9070;
+  --border:         rgba(201,168,76,0.35);
+  --shadow:         0 0 10px rgba(201,168,76,0.25);
+  --shadow-hover:   0 0 22px rgba(227,191,106,0.55);
+  --radius:         12px;
+  --radius-lg:      20px;
+  --transition:     all 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+nav {
+  background: rgba(17,17,17,0.92);
+  box-shadow: 0 2px 15px rgba(201,168,76,0.35);
+  border-bottom: 1px solid rgba(201,168,76,0.3);
+}
+.hero {
+  background: linear-gradient(135deg,#111111 0%,rgba(201,168,76,0.10) 100%);
+}
+.hero::before {
+  background: radial-gradient(ellipse at 70% 50%,rgba(201,168,76,0.15) 0%,transparent 60%);
+}
+.nav-logo .logo-icon { background:#c9a84c; box-shadow:0 0 10px #c9a84c; }
+.custom-logo { filter:drop-shadow(0 0 10px #c9a84c); }
+.nav-logo:hover .custom-logo { filter:drop-shadow(0 0 14px #e3bf6a); }
+.hero-img { box-shadow:0 0 60px rgba(201,168,76,0.35); border:1px solid rgba(201,168,76,0.3); }
+.hero-card { background:rgba(17,17,17,0.92); border:1px solid rgba(201,168,76,0.45); box-shadow:0 0 20px rgba(201,168,76,0.2); }
+.stats { background:#1a1400; border-top:1px solid rgba(201,168,76,0.3); border-bottom:1px solid rgba(201,168,76,0.3); }
+.testimonials-bg { background:#1a1400; }
+.testimonials-bg .section-label { color:#c9a84c; }
+.page-header { background:linear-gradient(135deg,#1a1400 0%,rgba(201,168,76,0.7) 100%); }
+.auth-page { background:linear-gradient(135deg,#111111 0%,#1a1400 60%,#2a2000 100%); }
+.auth-logo .logo-circle { background:#c9a84c; }
+.btn-primary { box-shadow:0 0 15px rgba(201,168,76,0.5); }
+.btn-primary:hover { background:#e3bf6a; box-shadow:0 0 25px rgba(227,191,106,0.7); }
+.btn-full:hover { background:#a8872e; }
+.property-card::before,.why-card::before,.agent-card::before {
+  background:radial-gradient(600px circle at var(--mouse-x,0) var(--mouse-y,0),rgba(201,168,76,0.13),transparent 40%);
+}
+.card-price { color:#c9a84c; text-shadow:0 0 12px rgba(201,168,76,0.5); }
+.card-badge.location { background:linear-gradient(110deg,#c9a84c 0%,#fff 45%,#c9a84c 55%,#c9a84c 100%); background-size:250% 100%; color:#1a0e00; }
+footer { border-top:1px solid rgba(201,168,76,0.25); }
+.footer-social a:hover { background:#c9a84c; }
+/* ============================================================
+   CORRECTIF THÈME NOIR & OR — ImmoPremier
+   Copiez ces règles APRÈS votre CSS existant (ou dans un
+   fichier séparé chargé en dernier) pour écraser les
+   couleurs violettes/bleues résiduelles.
+   ============================================================ */
+
+/* ── 1. HERO ──────────────────────────────────────────────── */
+.hero {
+  background: linear-gradient(
+    135deg,
+    #111111 0%,
+    rgba(201, 168, 76, 0.12) 100%
+  ) !important;
 }
 
+/* Lueur radiale dorée au lieu de la violette */
+.hero::before {
+  background:
+    url('content/bg2.jfif') center / cover no-repeat,
+    radial-gradient(
+      ellipse at 70% 50%,
+      rgba(201, 168, 76, 0.18) 0%,
+      transparent 60%
+    ) !important;
+  opacity: 0.18 !important;
+}
+
+/* ── 2. PAGE-HEADER (bannière "Nos Propriétés", etc.) ──────── */
+.page-header {
+  background: linear-gradient(
+    135deg,
+    #1a1400 0%,
+    rgba(201, 168, 76, 0.55) 100%
+  ) !important;
+}
+
+/* Image de fond + particules dorées déjà présents → on garde */
+.page-header::before {
+  background: url('ai2.png') center / cover !important;
+  opacity: 0.15 !important;
+}
+
+/* ── 3. NAVBAR ────────────────────────────────────────────── */
+nav {
+  background: rgba(17, 17, 17, 0.92) !important;
+  box-shadow: 0 2px 15px rgba(201, 168, 76, 0.35) !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.30) !important;
+}
+
+/* ── 4. AUTH PAGE ─────────────────────────────────────────── */
+.auth-page {
+  background: linear-gradient(
+    135deg,
+    #111111 0%,
+    #1a1400 60%,
+    #2a2000 100%
+  ) !important;
+}
+
+/* ── 5. BOUTON PRIMAIRE ───────────────────────────────────── */
+.btn-primary {
+  box-shadow: 0 0 15px rgba(201, 168, 76, 0.50) !important;
+}
+
+.btn-primary:hover {
+  background: #e3bf6a !important;
+  box-shadow: 0 0 25px rgba(227, 191, 106, 0.70) !important;
+}
+
+/* ── 6. SEARCH-BAR focus ─────────────────────────────────── */
+.search-bar:focus-within {
+  border-color: var(--accent) !important;
+  box-shadow:
+    0 0 15px rgba(201, 168, 76, 0.40),
+    inset 0 0 5px rgba(201, 168, 76, 0.20) !important;
+}
+
+/* ── 7. FORM INPUTS focus ────────────────────────────────── */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--accent) !important;
+  box-shadow:
+    0 0 15px rgba(201, 168, 76, 0.40),
+    inset 0 0 5px rgba(201, 168, 76, 0.20) !important;
+}
+
+/* ── 8. STATS BAND ───────────────────────────────────────── */
+.stats {
+  background: #1a1400 !important;
+  border-top: 1px solid rgba(201, 168, 76, 0.30) !important;
+  border-bottom: 1px solid rgba(201, 168, 76, 0.30) !important;
+}
+
+/* ── 9. TESTIMONIALS ─────────────────────────────────────── */
+.testimonials-bg {
+  background: #1a1400 !important;
+}
+
+.testimonials-bg .section-label {
+  color: #c9a84c !important;
+}
+
+/* ── 10. HERO IMAGE — bordure & lueur dorées ─────────────── */
+.hero-img {
+  border: 1px solid rgba(201, 168, 76, 0.45) !important;
+  box-shadow:
+    0 0 40px rgba(201, 168, 76, 0.35),
+    0 0 80px rgba(201, 168, 76, 0.15) !important;
+}
+
+/* ── 11. HERO CARDS flottantes — fond sombre + bordure or ── */
+.hero-card {
+  background: rgba(17, 17, 17, 0.92) !important;
+  border: 1px solid rgba(201, 168, 76, 0.50) !important;
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.25) !important;
+  color: #fff !important;
+}
+
+/* Icône ✅ et texte en or dans les cartes */
+.hero-card strong,
+.hero-card b {
+  color: #c9a84c !important;
+}
+
+/* ── 13. MOBILE NAV (hamburger ouvert) ───────────────────── */
+@media (max-width: 768px) {
+  .nav-links.open {
+    background: #1a1400 !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -214,7 +377,7 @@ nav {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('  bg2.jfif') center/cover no-repeat;
+  background: url('content/bg2.jfif') center/cover no-repeat;
   opacity: 0.18;
 }
 
@@ -505,12 +668,12 @@ nav {
 }
 
 .card-badge.location {
-  background: linear-gradient(110deg, #8B5CF6 0%, #ffffff 45%, #8B5CF6 55%, #8B5CF6 100%);
+  background: linear-gradient(110deg, #c9a84c, #ffffff 45%,#c9a84c 55%,#c9a84c 100%);
   background-size: 250% 100%;
   animation: shine 2s linear infinite;
 }
 .card-badge.neuf {
-background: linear-gradient(110deg, #EC4899 0%, #ffffff 45%, #EC4899 55%, #EC4899 100%);
+background: linear-gradient(110deg, #e3bf6a 0%, #ffffff 45%, #e3bf6a 55%, #e3bf6a 100%);
   background-size: 250% 100%;
   animation: shine 2s linear infinite;
 }
@@ -544,13 +707,33 @@ background: linear-gradient(110deg, #EC4899 0%, #ffffff 45%, #EC4899 55%, #EC489
 }
 
 .card-price {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin-bottom: 6px;
-  text-shadow: 0 0 12px rgba(236, 72, 153, 0.6);
+  color: #c9a84c !important;
+  background: linear-gradient(
+    90deg,
+    #a8872e 0%,
+    #ffffff 40%,
+    #c9a84c 55%,
+    #a8872e 100%
+  );
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: priceShine 3s linear infinite;
+  text-shadow: none !important;
+  font-weight: 800 !important;}
+  @keyframes priceShine {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
 }
+ 
+/* ── 15. MOBILE NAV (hamburger ouvert) ───────────────────── */
+@media (max-width: 768px) {
+  .nav-links.open {
+    background: #1a1400 !important;
+  }
+}
+ 
 
 .card-title {
   font-size: 1rem;
@@ -1118,7 +1301,7 @@ footer {
   content: '';
   position: absolute;
   inset: 0;
-  background: url('  ai2.png') center/cover;
+  background: url('ai2.png') center/cover;
   opacity: 0.15;
 }
 .page-header h1 {
