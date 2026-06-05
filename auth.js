@@ -164,7 +164,7 @@ function handleRegister(e) {
 
 function logout() {
   clearSession();
-  window.location.href = window.location.pathname.includes('content/') ? '../index.html' : 'index.html';
+  window.location.href = window.location.pathname.includes(' ') ? '../index.html' : 'index.html';
 }
 
 function updateNavAuth() {
@@ -181,13 +181,13 @@ function updateNavAuth() {
         </button>
         <div class="user-dropdown" id="user-dropdown">
           <a href="#">👤 Mon profil</a>
-          <a href="${window.location.pathname.includes('content/') ? '' : 'content/'}produits.html">❤️ Mes favoris</a>
+          <a href="${window.location.pathname.includes(' ') ? '' : ' '}produits.html">❤️ Mes favoris</a>
           <button class="logout-btn" onclick="logout()">🚪 Se déconnecter</button>
         </div>
       </div>
     `;
   } else {
-    const prefix = window.location.pathname.includes('content/') ? '' : 'content/';
+    const prefix = window.location.pathname.includes(' ') ? '' : ' ';
     navAuth.innerHTML = `
       <a href="${prefix}connexion.html" class="nav-cta">Se connecter</a>
     `;
